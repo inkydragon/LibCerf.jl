@@ -18,8 +18,8 @@ A Julia wrapper for the `libcerf` library.
     Imaginary error function
 - [`faddeeva_w(z)`](@ref):  Faddeeva's scaled complex error function
     - [`im_w(x)`](@ref):        imaginary part of `faddeeva_w(complex(x, 0.0))`
-    - [`im_w(re, im)`](@ref):   imaginary part of `faddeeva_w(z)`
-    - [`re_w(re, im)`](@ref):   real part of `faddeeva_w(z)`
+    - [`im_w(re, im)`](@ref):   imaginary part of `faddeeva_w(complex(re, im))`
+    - [`re_w(re, im)`](@ref):   real part of `faddeeva_w(complex(re, im))`
 - [`dawson(z)`](@ref), `dawson(x)`: Dawson's integral
 - [`voigt(x, sigma, gamma)`](@ref):
     Voigt's convolution of a Gaussian and a Lorentzian
