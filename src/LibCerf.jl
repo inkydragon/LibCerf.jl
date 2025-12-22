@@ -49,6 +49,33 @@ Error function of complex arguments.
 \\text{erf}(z) = \\frac{2}{\\sqrt{\\pi}} \\int_0^z e^{-t^2} dt
 ```
 
+# Examples
+
+```jldoctest
+julia> [ (x=x, erf=Float32(erf(complex(x)))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, erf::Float32}}:
+ (x = -2.0, erf = -0.9953223)
+ (x = -1.5, erf = -0.96610516)
+ (x = -1.0, erf = -0.8427008)
+ (x = -0.5, erf = -0.5204999)
+ (x = 0.0, erf = 0.0)
+ (x = 0.5, erf = 0.5204999)
+ (x = 1.0, erf = 0.8427008)
+ (x = 1.5, erf = 0.96610516)
+ (x = 2.0, erf = 0.9953223)
+
+julia> [ (x=x, erf=erf(complex(x))) for x in (-Inf, 0.0, Inf) ]
+3-element Vector{@NamedTuple{x::Float64, erf::ComplexF64}}:
+ (x = -Inf, erf = -1.0 + 0.0im)
+ (x = 0.0, erf = 0.0 + 0.0im)
+ (x = Inf, erf = 1.0 + 0.0im)
+
+julia> erf(complex(3.14)) + erfc(complex(3.14))
+1.0 + 0.0im
+```
+
+See also: [`erfc(z)`](@ref), [`erfcx(z)`](@ref), [`erfi(z)`](@ref)
+
 # References
 - [DLMF: §7.2.1](https://dlmf.nist.gov/7.2#E1)
 - [Erf -- Wolfram MathWorld](https://mathworld.wolfram.com/Erf.html)
@@ -65,6 +92,32 @@ Complementary error function of complex arguments.
 = \\frac{2}{\\sqrt{\\pi}} \\int_z^\\infty e^{-t^2} dt
 = 1 - \\text{erf}(z)
 ```
+
+# Examples
+```jldoctest
+julia> [ (x=x, erfc=Float32(erfc(complex(x)))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, erfc::Float32}}:
+ (x = -2.0, erfc = 1.9953222)
+ (x = -1.5, erfc = 1.9661051)
+ (x = -1.0, erfc = 1.8427008)
+ (x = -0.5, erfc = 1.5204998)
+ (x = 0.0, erfc = 1.0)
+ (x = 0.5, erfc = 0.47950011)
+ (x = 1.0, erfc = 0.1572992)
+ (x = 1.5, erfc = 0.03389485)
+ (x = 2.0, erfc = 0.004677735)
+
+julia> [ (x=x, erfc=erfc(complex(x))) for x in (-Inf, 0.0, Inf) ]
+3-element Vector{@NamedTuple{x::Float64, erfc::ComplexF64}}:
+ (x = -Inf, erfc = 2.0 - 0.0im)
+ (x = 0.0, erfc = 1.0 - 0.0im)
+ (x = Inf, erfc = 0.0 - 0.0im)
+
+julia> erf(complex(3.141)) + erfc(complex(3.141))
+1.0 + 0.0im
+```
+
+See also: [`erf(z)`](@ref), [`erfcx(z)`](@ref)
 
 # References
 - [DLMF: §7.2.2](https://dlmf.nist.gov/7.2#E2)
@@ -85,6 +138,33 @@ real or complex arguments.
 = w(iz)
 ```
 
+# Examples
+
+```jldoctest
+julia> [ (x=x, erfcx=Float32(erfcx(complex(x)))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, erfcx::Float32}}:
+ (x = -2.0, erfcx = 108.9409)
+ (x = -1.5, erfcx = 18.653887)
+ (x = -1.0, erfcx = 5.0089803)
+ (x = -0.5, erfcx = 1.9523605)
+ (x = 0.0, erfcx = 1.0)
+ (x = 0.5, erfcx = 0.61569035)
+ (x = 1.0, erfcx = 0.42758358)
+ (x = 1.5, erfcx = 0.32158542)
+ (x = 2.0, erfcx = 0.25539568)
+
+julia> [ (x=x, erfcx=erfcx(complex(x))) for x in (-Inf, 0.0, Inf) ]
+3-element Vector{@NamedTuple{x::Float64, erfcx::ComplexF64}}:
+ (x = -Inf, erfcx = Inf - 0.0im)
+ (x = 0.0, erfcx = 1.0 - 0.0im)
+ (x = Inf, erfcx = 0.0 - 0.0im)
+
+julia> erfcx(complex(pi)) - exp(pi^2)*erfc(complex(pi))
+0.0 + 0.0im
+```
+
+See also: [`erf(z)`](@ref), [`erfc(z)`](@ref)
+
 # References
 - [Faddeeva Package](http://ab-initio.mit.edu/faddeeva/)
 """
@@ -101,6 +181,33 @@ Imaginary error function of real or complex arguments.
 ```math
 \\text{erfi}(z) = -i \\text{erf}(iz)
 ```
+
+# Examples
+
+```jldoctest
+julia> [ (x=x, erfi=Float32(erfi(complex(x)))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, erfi::Float32}}:
+ (x = -2.0, erfi = -18.564802)
+ (x = -1.5, erfi = -4.5847335)
+ (x = -1.0, erfi = -1.6504258)
+ (x = -0.5, erfi = -0.6149521)
+ (x = 0.0, erfi = 0.0)
+ (x = 0.5, erfi = 0.6149521)
+ (x = 1.0, erfi = 1.6504258)
+ (x = 1.5, erfi = 4.5847335)
+ (x = 2.0, erfi = 18.564802)
+
+julia> [ (x=x, erfi=erfi(complex(x))) for x in (-Inf, 0.0, Inf) ]
+3-element Vector{@NamedTuple{x::Float64, erfi::ComplexF64}}:
+ (x = -Inf, erfi = -Inf + 0.0im)
+ (x = 0.0, erfi = 0.0 + 0.0im)
+ (x = Inf, erfi = Inf + 0.0im)
+
+julia> erfi(complex(pi)) + im*erf(im*complex(pi))
+0.0 + 0.0im
+```
+
+See also: [`erf(z)`](@ref)
 
 # References
 - [Erfi -- Wolfram MathWorld](https://mathworld.wolfram.com/Erfi.html)
