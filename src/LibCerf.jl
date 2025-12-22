@@ -161,6 +161,9 @@ julia> [ (x=x, erfcx=erfcx(complex(x))) for x in (-Inf, 0.0, Inf) ]
 
 julia> erfcx(complex(pi)) - exp(pi^2)*erfc(complex(pi))
 0.0 + 0.0im
+
+julia> erfcx(complex(pi)) - faddeeva_w(im * complex(pi))
+0.0 - 0.0im
 ```
 
 See also: [`erf(z)`](@ref), [`erfc(z)`](@ref)
@@ -205,9 +208,6 @@ julia> [ (x=x, erfi=erfi(complex(x))) for x in (-Inf, 0.0, Inf) ]
 
 julia> erfi(complex(pi)) + im*erf(im*complex(pi))
 0.0 + 0.0im
-
-julia> erfcx(complex(pi)) - faddeeva_w(im * complex(pi))
-0.0 - 0.0im
 ```
 
 See also: [`erf(z)`](@ref)
@@ -225,7 +225,9 @@ erfi(z::T) where {T<:ComplexFloat} = T(cerfi(ComplexF64(z)))
 
 Faddeeva's scaled complex error function of complex arguments.
 ```math
-w(z) = e^{-z^2} \\text{erfc}(-iz)
+w(z)
+= e^{-z^2} \\text{erfc}(-iz)
+= \\text{erfcx}(-iz)
 ```
 
 # Examples
@@ -247,6 +249,9 @@ julia> [ (x=x, w=faddeeva_w(complex(x))) for x in (-Inf, 0.0, Inf) ]
  (x = -Inf, w = 0.0 - 0.0im)
  (x = 0.0, w = 1.0 + 0.0im)
  (x = Inf, w = 0.0 + 0.0im)
+
+julia> faddeeva_w(complex(pi)) - erfcx(-im * complex(pi))
+0.0 + 0.0im
 ```
 
 See also: [`erfc(z)`](@ref), [`erfcx(z)`](@ref)
