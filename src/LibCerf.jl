@@ -345,6 +345,34 @@ Dawson integral of real or complex arguments.
 = \\frac{\\sqrt{\\pi}}{2} e^{-z^2} \\text{erfi}(z)
 ```
 
+# Examples
+
+```jldoctest
+julia> [ (x=x, dawson=Float32(dawson(x))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, dawson::Float32}}:
+ (x = -2.0, dawson = -0.3013404)
+ (x = -1.5, dawson = -0.42824906)
+ (x = -1.0, dawson = -0.5380795)
+ (x = -0.5, dawson = -0.4244364)
+ (x = 0.0, dawson = 0.0)
+ (x = 0.5, dawson = 0.4244364)
+ (x = 1.0, dawson = 0.5380795)
+ (x = 1.5, dawson = 0.42824906)
+ (x = 2.0, dawson = 0.3013404)
+
+julia> [ (x=x, dawson=dawson(x)) for x in (-Inf, -0.0, 0.0, Inf) ]
+4-element Vector{@NamedTuple{x::Float64, dawson::Float64}}:
+ (x = -Inf, dawson = -0.0)
+ (x = -0.0, dawson = -0.0)
+ (x = 0.0, dawson = 0.0)
+ (x = Inf, dawson = 0.0)
+
+julia> abs( dawson(complex(pi)) - sqrt(pi)/2*exp(-pi^2)*erfi(complex(pi)) ) < eps(Float64)
+true
+```
+
+See also: [`erfi(z)`](@ref)
+
 # References
 - [DLMF: §7.2.5](https://dlmf.nist.gov/7.2#E5)
 - [Dawson's Integral -- Wolfram MathWorld](https://mathworld.wolfram.com/DawsonsIntegral.html)
