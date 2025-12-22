@@ -64,9 +64,10 @@ julia> [ (x=x, erf=Float32(erf(complex(x)))) for x in -2:0.5:2 ]
  (x = 1.5, erf = 0.96610516)
  (x = 2.0, erf = 0.9953223)
 
-julia> [ (x=x, erf=erf(complex(x))) for x in (-Inf, 0.0, Inf) ]
-3-element Vector{@NamedTuple{x::Float64, erf::ComplexF64}}:
+julia> [ (x=x, erf=erf(complex(x))) for x in (-Inf, -0.0, 0.0, Inf) ]
+4-element Vector{@NamedTuple{x::Float64, erf::ComplexF64}}:
  (x = -Inf, erf = -1.0 + 0.0im)
+ (x = -0.0, erf = -0.0 + 0.0im)
  (x = 0.0, erf = 0.0 + 0.0im)
  (x = Inf, erf = 1.0 + 0.0im)
 
@@ -200,9 +201,10 @@ julia> [ (x=x, erfi=Float32(erfi(complex(x)))) for x in -2:0.5:2 ]
  (x = 1.5, erfi = 4.5847335)
  (x = 2.0, erfi = 18.564802)
 
-julia> [ (x=x, erfi=erfi(complex(x))) for x in (-Inf, 0.0, Inf) ]
-3-element Vector{@NamedTuple{x::Float64, erfi::ComplexF64}}:
+julia> [ (x=x, erfi=erfi(complex(x))) for x in (-Inf, -0.0, 0.0, Inf) ]
+4-element Vector{@NamedTuple{x::Float64, erfi::ComplexF64}}:
  (x = -Inf, erfi = -Inf + 0.0im)
+ (x = -0.0, erfi = -0.0 + 0.0im)
  (x = 0.0, erfi = 0.0 + 0.0im)
  (x = Inf, erfi = Inf + 0.0im)
 
@@ -244,9 +246,10 @@ julia> [ (x=x, w=ComplexF16(faddeeva_w(complex(x)))) for x in -2:0.5:2 ]
  (x = 1.5, w = Float16(0.1054) + Float16(0.4832)im)
  (x = 2.0, w = Float16(0.01831) + Float16(0.34)im)
 
-julia> [ (x=x, w=faddeeva_w(complex(x))) for x in (-Inf, 0.0, Inf) ]
-3-element Vector{@NamedTuple{x::Float64, w::ComplexF64}}:
+julia> [ (x=x, w=faddeeva_w(complex(x))) for x in (-Inf, -0.0, 0.0, Inf) ]
+4-element Vector{@NamedTuple{x::Float64, w::ComplexF64}}:
  (x = -Inf, w = 0.0 - 0.0im)
+ (x = -0.0, w = 1.0 - 0.0im)
  (x = 0.0, w = 1.0 + 0.0im)
  (x = Inf, w = 0.0 + 0.0im)
 
@@ -286,9 +289,10 @@ julia> [ (x=x, w=Float32(im_w(x, 0.0))) for x in -2:0.5:2 ]
  (x = 1.5, w = 0.48322734)
  (x = 2.0, w = 0.34002623)
 
-julia> [ (x=x, w_im=im_w(x)) for x in (-Inf, 0.0, Inf) ]
-3-element Vector{@NamedTuple{x::Float64, w_im::Float64}}:
+julia> [ (x=x, w_im=im_w(x)) for x in (-Inf, -0.0, 0.0, Inf) ]
+4-element Vector{@NamedTuple{x::Float64, w_im::Float64}}:
  (x = -Inf, w_im = -0.0)
+ (x = -0.0, w_im = -0.0)
  (x = 0.0, w_im = 0.0)
  (x = Inf, w_im = 0.0)
 
