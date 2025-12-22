@@ -4,8 +4,10 @@ using Test
 @testset "LibCerf.jl" begin
     @test LibCerf.Libcerf_jll.is_available()
 
-    @testset "Docstrings" begin
-        @test isempty(Docs.undocumented_names(LibCerf))
+    if VERSION >= v"1.11"
+        @testset "Docstrings" begin
+            @test isempty(Docs.undocumented_names(LibCerf))
+        end
     end
 end
 
