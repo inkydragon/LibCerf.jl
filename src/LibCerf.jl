@@ -1,4 +1,36 @@
 # SPDX-License-Identifier: MIT
+"""
+    LibCerf
+
+A Julia wrapper for the `libcerf` library.
+
+> `libcerf`, a self-contained numeric library that provides
+> an efficient and accurate implementation of complex error functions,
+> along with Dawson, Faddeeva, and Voigt functions.
+
+# Exported functions
+
+- [`erf(z)`](@ref):     Complex error function
+- [`erfc(z)`](@ref):    Complementary error function
+- [`erfcx(z)`](@ref), `erfcx(x)`:
+    Underflow-compensated complementary error function
+- [`erfi(z)`](@ref), `erfi(x)`:
+    Imaginary error function
+- [`faddeeva_w(z)`](@ref):  Faddeeva's scaled complex error function
+    - [`im_w(x)`](@ref):        imaginary part of `faddeeva_w(complex(x, 0.0))`
+    - [`im_w(re, im)`](@ref):   imaginary part of `faddeeva_w(z)`
+    - [`re_w(re, im)`](@ref):   real part of `faddeeva_w(z)`
+- [`dawson(z)`](@ref), `dawson(x)`: Dawson's integral
+- [`voigt(x, sigma, gamma)`](@ref):
+    Voigt's convolution of a Gaussian and a Lorentzian
+- [`voigt_hwhm(sigma, gamma)`](@ref):
+    Half width at half maximum of the Voigt profile
+
+# References
+
+- S. G. Johnson, J. Wuttke: libcerf, numeric library for complex error functions,
+    https://jugit.fz-juelich.de/mlz/libcerf
+"""
 module LibCerf
 
 export erf, erfc, erfcx, erfi
@@ -98,7 +130,7 @@ end
 """
     voigt_hwhm(sigma, gamma)
 
-Full width at half maximum of the Voigt function of real arguments.
+Half width at half maximum of the Voigt function of real arguments.
 """
 voigt_hwhm
 function voigt_hwhm(sigma::T, gamma::T) where {T<:Union{Float16,Float32}}
