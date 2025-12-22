@@ -1,7 +1,11 @@
 name = "LibCerf"
 uuid = "3328f0eb-23dc-40af-8ac5-38dea7eda2f6"
-authors = ["Chengyu HAN <cyhan.dev@outlook.com> and contributors"]
 version = "1.0.0-DEV"
+authors = ["Chengyu HAN <cyhan.dev@outlook.com> and contributors"]
+
+[deps]
+Libcerf_jll = "af83a40a-c4c4-57a0-81df-2309fbd279e3"
 
 [compat]
+Libcerf_jll = "1.17.0"
 julia = "1.10.10"
