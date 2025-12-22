@@ -3,6 +3,10 @@ using Test
 
 @testset "LibCerf.jl" begin
     @test LibCerf.Libcerf_jll.is_available()
+
+    @testset "Docstrings" begin
+        @test isempty(Docs.undocumented_names(LibCerf))
+    end
 end
 
 for T in (Float64, Float32, Float16)
