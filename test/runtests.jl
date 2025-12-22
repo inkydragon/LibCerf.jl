@@ -23,18 +23,34 @@ for T in (Float64, Float32, Float16)
     @testset "im_w($T)" begin
         @test isnan(im_w(T(NaN)))
         @test isnan(im_w(T(NaN), T(NaN)))
+        # @test isnan(im_w(T(0.0), T(NaN)))
+        # @test isnan(im_w(T(NaN), T(0.0)))
+        @test_broken im_w(T(0.0), T(NaN)) === T(NaN)
+        @test_broken im_w(T(NaN), T(0.0)) === T(NaN)
     end
 
     @testset "re_w($T)" begin
         @test isnan(re_w(T(NaN), T(NaN)))
+        @test isnan(re_w(T(0.0), T(NaN)))
+        # @test isnan(re_w(T(NaN), T(0.0)))
+        @test_broken re_w(T(NaN), T(0.0)) === T(NaN)
     end
 
     @testset "voigt($T)" begin
         @test isnan(voigt(T(NaN), T(NaN), T(NaN)))
+        @test isnan(voigt(T(0.0), T(NaN), T(NaN)))
+        @test isnan(voigt(T(NaN), T(0.0), T(NaN)))
+        @test isnan(voigt(T(NaN), T(NaN), T(0.0)))
+        # @test isnan(voigt(T(NaN), T(0.0), T(0.0)))
+        @test_broken voigt(T(NaN), T(0.0), T(0.0)) === T(NaN)
+        @test isnan(voigt(T(0.0), T(NaN), T(0.0)))
+        @test isnan(voigt(T(0.0), T(0.0), T(NaN)))
     end
 
     @testset "voigt_hwhm($T)" begin
         @test isnan(voigt_hwhm(T(NaN), T(NaN)))
+        @test isnan(voigt_hwhm(T(0.0), T(NaN)))
+        @test isnan(voigt_hwhm(T(NaN), T(0.0)))
     end
 
     for TT in (T, CT)
