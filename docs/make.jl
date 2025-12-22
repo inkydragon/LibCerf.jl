@@ -8,10 +8,13 @@ makedocs(;
     authors="Chengyu HAN <cyhan.dev@outlook.com> and contributors",
     sitename="LibCerf.jl",
     format=Documenter.HTML(;
-        canonical="https://inkydragon.github.io/LibCerf.jl",
+        # canonical="https://inkydragon.github.io/LibCerf.jl",
+        canonical="https://cyhan.dev/LibCerf.jl",
         edit_link="main",
         assets=String[],
     ),
+    warnonly=true,
+    checkdocs=:exports,
     pages=[
         "Home" => "index.md",
     ],
