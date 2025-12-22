@@ -1,0 +1,7 @@
+name = "LibCerf"
+uuid = "3328f0eb-23dc-40af-8ac5-38dea7eda2f6"
+authors = ["Chengyu HAN <cyhan.dev@outlook.com> and contributors"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.10.10"
