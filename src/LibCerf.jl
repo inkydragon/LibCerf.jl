@@ -407,6 +407,46 @@ G(x; \\sigma) = \\frac{1}{\\sigma\\sqrt{2\\pi}} \\exp(-\\frac{x^2}{2\\sigma^2})
 L(x; \\gamma) = \\frac{ \\gamma }{ \\pi(x^2+\\gamma^2) }
 ```
 
+# Examples
+
+```jldoctest
+julia> [ (x=x, voigt=Float32(voigt(x, 1.0, 0.0))) for x in -10:2.0:10 ]
+11-element Vector{@NamedTuple{x::Float64, voigt::Float32}}:
+ (x = -10.0, voigt = 7.6945985f-23)
+ (x = -8.0, voigt = 5.052271f-15)
+ (x = -6.0, voigt = 6.075883f-9)
+ (x = -4.0, voigt = 0.00013383022)
+ (x = -2.0, voigt = 0.053990968)
+ (x = 0.0, voigt = 0.3989423)
+ (x = 2.0, voigt = 0.053990968)
+ (x = 4.0, voigt = 0.00013383022)
+ (x = 6.0, voigt = 6.075883f-9)
+ (x = 8.0, voigt = 5.052271f-15)
+ (x = 10.0, voigt = 7.6945985f-23)
+
+julia> [ (x=x, voigt=Float32(voigt(x, 0.0, 3.0))) for x in -10:2.0:10 ]
+11-element Vector{@NamedTuple{x::Float64, voigt::Float32}}:
+ (x = -10.0, voigt = 0.008760823)
+ (x = -8.0, voigt = 0.013081228)
+ (x = -6.0, voigt = 0.02122066)
+ (x = -4.0, voigt = 0.038197186)
+ (x = -2.0, voigt = 0.07345613)
+ (x = 0.0, voigt = 0.10610329)
+ (x = 2.0, voigt = 0.07345613)
+ (x = 4.0, voigt = 0.038197186)
+ (x = 6.0, voigt = 0.02122066)
+ (x = 8.0, voigt = 0.013081228)
+ (x = 10.0, voigt = 0.008760823)
+
+julia> [ (x=x, voigt=Float32(voigt(x, 1.0, 0.5))) for x in (-Inf, 0.0, Inf) ]
+3-element Vector{@NamedTuple{x::Float64, voigt::Float32}}:
+ (x = -Inf, voigt = 0.0)
+ (x = 0.0, voigt = 0.27895546)
+ (x = Inf, voigt = 0.0)
+```
+
+See also: [`faddeeva_w(z)`](@ref), [`voigt_hwhm(sigma, gamma)`](@ref)
+
 # References
 - [Voigt profile - Wikipedia](https://en.wikipedia.org/wiki/Voigt_profile)
 """
@@ -425,6 +465,35 @@ It is implicitly defined by:
 \\text{Voigt}( \\text{VoigtHWHM}( \\sigma, \\gamma); \\sigma, \\gamma)
 = \\frac{1}{2} \\text{Voigt}(0; \\sigma, \\gamma)
 ```
+
+# Examples
+
+```jldoctest
+julia> σ, γ = 1.3, 0.5;
+
+julia> [ (x=x, voigt=Float32(voigt(x, σ, γ))) for x in -10:3.0:10 ]
+7-element Vector{@NamedTuple{x::Float64, voigt::Float32}}:
+ (x = -10.0, voigt = 0.0016752308)
+ (x = -7.0, voigt = 0.0036378063)
+ (x = -4.0, voigt = 0.016749112)
+ (x = -1.0, voigt = 0.18637252)
+ (x = 2.0, voigt = 0.100623265)
+ (x = 5.0, voigt = 0.008416025)
+ (x = 8.0, voigt = 0.0027030057)
+
+julia> Float32(voigt(0.0, σ, γ))    # peak
+0.23147874f0
+
+julia> Float32(voigt(0.0, σ, γ)) / 2  # half peak
+0.11573937f0
+
+julia> hwhm_x = voigt_hwhm(σ, γ);   # here voigt takes exactly half the peak value
+
+julia> voigt(hwhm_x, σ, γ) - voigt(0.0, σ, γ)/2
+0.0
+```
+
+See also: [`voigt(x, sigma, gamma)`](@ref)
 
 # References
 - Wuttke, J. (2025). Power series for the half width of the Voigt function, rederived.
