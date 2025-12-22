@@ -9,7 +9,7 @@ for T in (Float64, Float32, Float16)
     CT = Complex{T}
 
     @testset "erf($CT)" begin
-        @test isnan(erf(CT(NaN)))
+        @test isnan(@inferred(erf(CT(NaN))))
 
         @test erf(CT(Inf)) == CT(1)
         @test erf(CT(10)) == CT(1)
@@ -19,7 +19,7 @@ for T in (Float64, Float32, Float16)
     end
 
     @testset "erfc($CT)" begin
-        @test isnan(erfc(CT(NaN)))
+        @test isnan(@inferred(erfc(CT(NaN))))
 
         @test erfc(CT(Inf)) == CT(0)
         @test erfc(CT(100)) == CT(0)
@@ -30,7 +30,7 @@ for T in (Float64, Float32, Float16)
     end
 
     @testset "faddeeva_w($CT)" begin
-        @test isnan(faddeeva_w(CT(NaN)))
+        @test isnan(@inferred(faddeeva_w(CT(NaN))))
 
         @test faddeeva_w(CT(Inf)) == zero(CT)
         @test faddeeva_w(zero(CT)) == one(CT)
@@ -50,7 +50,7 @@ for T in (Float64, Float32, Float16)
     end
 
     @testset "re_w($T)" begin
-        @test isnan(re_w(T(NaN), T(NaN)))
+        @test isnan(@inferred(re_w(T(NaN), T(NaN))))
         @test isnan(re_w(T(0.0), T(NaN)))
         # @test isnan(re_w(T(NaN), T(0.0)))
         @test_broken re_w(T(NaN), T(0.0)) === T(NaN)
@@ -61,7 +61,7 @@ for T in (Float64, Float32, Float16)
     end
 
     @testset "voigt($T)" begin
-        @test isnan(voigt(T(NaN), T(NaN), T(NaN)))
+        @test isnan(@inferred(voigt(T(NaN), T(NaN), T(NaN))))
         @test isnan(voigt(T(0.0), T(NaN), T(NaN)))
         @test isnan(voigt(T(NaN), T(0.0), T(NaN)))
         @test isnan(voigt(T(NaN), T(NaN), T(0.0)))
@@ -75,7 +75,7 @@ for T in (Float64, Float32, Float16)
     end
 
     @testset "voigt_hwhm($T)" begin
-        @test isnan(voigt_hwhm(T(NaN), T(NaN)))
+        @test isnan(@inferred(voigt_hwhm(T(NaN), T(NaN))))
         @test isnan(voigt_hwhm(T(0.0), T(NaN)))
         @test isnan(voigt_hwhm(T(NaN), T(0.0)))
 
@@ -84,7 +84,7 @@ for T in (Float64, Float32, Float16)
 
     for TT in (T, CT)
         @testset "erfcx($TT)" begin
-            @test isnan(erfcx(TT(NaN)))
+            @test isnan(@inferred(erfcx(TT(NaN))))
 
             @test erfcx(zero(CT)) == one(CT)
             @test iszero(erfcx(CT(Inf)))
@@ -92,7 +92,7 @@ for T in (Float64, Float32, Float16)
         end
 
         @testset "erfi($TT)" begin
-            @test isnan(erfi(TT(NaN)))
+            @test isnan(@inferred(erfi(TT(NaN))))
 
             @test erfi(CT(Inf)) == CT(Inf)
             @test erfi(zero(CT)) == zero(CT)
@@ -100,7 +100,7 @@ for T in (Float64, Float32, Float16)
         end
 
         @testset "dawson($TT)" begin
-            @test isnan(dawson(TT(NaN)))
+            @test isnan(@inferred(dawson(TT(NaN))))
 
             @test iszero(dawson(CT(Inf)))
             @test dawson(zero(CT)) == zero(CT)
