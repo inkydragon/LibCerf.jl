@@ -205,6 +205,9 @@ julia> [ (x=x, erfi=erfi(complex(x))) for x in (-Inf, 0.0, Inf) ]
 
 julia> erfi(complex(pi)) + im*erf(im*complex(pi))
 0.0 + 0.0im
+
+julia> erfcx(complex(pi)) - faddeeva_w(im * complex(pi))
+0.0 - 0.0im
 ```
 
 See also: [`erf(z)`](@ref)
@@ -225,6 +228,29 @@ Faddeeva's scaled complex error function of complex arguments.
 w(z) = e^{-z^2} \\text{erfc}(-iz)
 ```
 
+# Examples
+```jldoctest
+julia> [ (x=x, w=ComplexF16(faddeeva_w(complex(x)))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, w::ComplexF16}}:
+ (x = -2.0, w = Float16(0.01831) - Float16(0.34)im)
+ (x = -1.5, w = Float16(0.1054) - Float16(0.4832)im)
+ (x = -1.0, w = Float16(0.368) - Float16(0.607)im)
+ (x = -0.5, w = Float16(0.779) - Float16(0.479)im)
+ (x = 0.0, w = Float16(1.0) + Float16(0.0)im)
+ (x = 0.5, w = Float16(0.779) + Float16(0.479)im)
+ (x = 1.0, w = Float16(0.368) + Float16(0.607)im)
+ (x = 1.5, w = Float16(0.1054) + Float16(0.4832)im)
+ (x = 2.0, w = Float16(0.01831) + Float16(0.34)im)
+
+julia> [ (x=x, w=faddeeva_w(complex(x))) for x in (-Inf, 0.0, Inf) ]
+3-element Vector{@NamedTuple{x::Float64, w::ComplexF64}}:
+ (x = -Inf, w = 0.0 - 0.0im)
+ (x = 0.0, w = 1.0 + 0.0im)
+ (x = Inf, w = 0.0 + 0.0im)
+```
+
+See also: [`erfc(z)`](@ref), [`erfcx(z)`](@ref)
+
 # References
 - [DLMF: §7.2.3](https://dlmf.nist.gov/7.2#E3)
 """
@@ -239,6 +265,33 @@ Imaginary part of Faddeeva's scaled complex error function of real arguments.
 
 - `im_w(x) = imag( faddeeva_w(complex(x, 0.0)) )`
 - `im_w(re, im) = imag( faddeeva_w(complex(re, im)) )`
+
+# Examples
+
+```jldoctest
+julia> [ (x=x, w=Float32(im_w(x, 0.0))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, w::Float32}}:
+ (x = -2.0, w = -0.34002623)
+ (x = -1.5, w = -0.48322734)
+ (x = -1.0, w = -0.6071577)
+ (x = -0.5, w = -0.47892517)
+ (x = 0.0, w = 0.0)
+ (x = 0.5, w = 0.47892517)
+ (x = 1.0, w = 0.6071577)
+ (x = 1.5, w = 0.48322734)
+ (x = 2.0, w = 0.34002623)
+
+julia> [ (x=x, w_im=im_w(x)) for x in (-Inf, 0.0, Inf) ]
+3-element Vector{@NamedTuple{x::Float64, w_im::Float64}}:
+ (x = -Inf, w_im = -0.0)
+ (x = 0.0, w_im = 0.0)
+ (x = Inf, w_im = 0.0)
+
+julia> faddeeva_w(3.14+0im) - complex(re_w(3.14,0.0), im_w(3.14))
+0.0 + 0.0im
+```
+
+See also: [`faddeeva_w(z)`](@ref), [`re_w(re, im)`](@ref)
 """
 im_w
 im_w(x::T) where {T<:AbstractFloat} = T(im_w_of_x(Float64(x)))
@@ -250,6 +303,33 @@ im_w(re::T, im::T) where {T<:AbstractFloat} = T(im_w_of_z(Float64(re), Float64(i
 Real part of Faddeeva's scaled complex error function of real arguments.
 
 - `re_w(re, im) = real( faddeeva_w(complex(re, im)) )`
+
+# Examples
+
+```jldoctest
+julia> [ (x=x, w=Float32(re_w(x, 0.0))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, w::Float32}}:
+ (x = -2.0, w = 0.01831564)
+ (x = -1.5, w = 0.10539922)
+ (x = -1.0, w = 0.36787945)
+ (x = -0.5, w = 0.7788008)
+ (x = 0.0, w = 1.0)
+ (x = 0.5, w = 0.7788008)
+ (x = 1.0, w = 0.36787945)
+ (x = 1.5, w = 0.10539922)
+ (x = 2.0, w = 0.01831564)
+
+julia> [ (x=x, w_im=re_w(x, 0.0)) for x in (-Inf, 0.0, Inf) ]
+3-element Vector{@NamedTuple{x::Float64, w_im::Float64}}:
+ (x = -Inf, w_im = 0.0)
+ (x = 0.0, w_im = 1.0)
+ (x = Inf, w_im = 0.0)
+
+julia> faddeeva_w(1.0+2.0im) - complex(re_w(1.0,2.0), im_w(1.0,2.0))
+0.0 + 0.0im
+```
+
+See also: [`faddeeva_w(z)`](@ref), [`im_w(re, im)`](@ref)
 """
 re_w
 re_w(re::T, im::T) where {T<:AbstractFloat} = T(re_w_of_z(Float64(re), Float64(im)))
