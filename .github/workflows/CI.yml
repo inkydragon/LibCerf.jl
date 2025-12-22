@@ -33,7 +33,7 @@ jobs:
         arch:
           - x64
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: julia-actions/setup-julia@v2
         with:
           version: ${{ matrix.version }}
@@ -42,7 +42,9 @@ jobs:
       - uses: julia-actions/julia-buildpkg@v1
       - uses: julia-actions/julia-runtest@v1
       - uses: julia-actions/julia-processcoverage@v1
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v5
+        # reduce upload case, limit 250 uploads/30days
+        if: matrix.os == 'ubuntu-latest' && matrix.version == 'lts'
         with:
           files: lcov.info
           token: ${{ secrets.CODECOV_TOKEN }}
@@ -55,16 +57,12 @@ jobs:
       contents: write
       statuses: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: julia-actions/setup-julia@v2
         with:
           version: '1'
       - uses: julia-actions/cache@v2
       - uses: julia-actions/julia-buildpkg@v1
-      - uses: julia-actions/julia-docdeploy@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
       - name: Run doctests
         shell: julia --project=docs --color=yes {0}
         run: |
@@ -72,3 +70,7 @@ jobs:
           using LibCerf
           DocMeta.setdocmeta!(LibCerf, :DocTestSetup, :(using LibCerf); recursive=true)
           doctest(LibCerf)
+      - uses: julia-actions/julia-docdeploy@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DOCUMENTER_KEY: ${{ secrets.DOCUMENTER_KEY }}
