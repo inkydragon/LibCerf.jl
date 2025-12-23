@@ -17,6 +17,7 @@ makedocs(;
     checkdocs=:exports,
     pages=[
         "Home" => "index.md",
+        "graphics.md",
     ],
 )
 
