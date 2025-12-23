@@ -167,7 +167,7 @@ julia> erfcx(complex(pi)) - faddeeva_w(im * complex(pi))
 0.0 - 0.0im
 ```
 
-See also: [`erf(z)`](@ref), [`erfc(z)`](@ref)
+See also: [`erf(z)`](@ref), [`erfc(z)`](@ref), [`faddeeva_w(z)`](@ref)
 
 # References
 - [Faddeeva Package](http://ab-initio.mit.edu/faddeeva/)
@@ -216,6 +216,7 @@ See also: [`erf(z)`](@ref)
 
 # References
 - [Erfi -- Wolfram MathWorld](https://mathworld.wolfram.com/Erfi.html)
+- [Imaginary error function - Wikipedia](https://en.wikipedia.org/wiki/Error_function#Imaginary_error_function)
 """
 erfi
 # NOTE: erfi(x::Float64) defined in cerf_h.jl
@@ -261,6 +262,7 @@ See also: [`erfc(z)`](@ref), [`erfcx(z)`](@ref)
 
 # References
 - [DLMF: §7.2.3](https://dlmf.nist.gov/7.2#E3)
+- [Faddeeva function - Wikipedia](https://en.wikipedia.org/wiki/Faddeeva_function)
 """
 faddeeva_w
 faddeeva_w(z::T) where {T<:ComplexFloat} = T(w_of_z(ComplexF64(z)))
