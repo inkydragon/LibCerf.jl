@@ -167,7 +167,7 @@ julia> erfcx(complex(pi)) - faddeeva_w(im * complex(pi))
 0.0 - 0.0im
 ```
 
-See also: [`erf(z)`](@ref), [`erfc(z)`](@ref)
+See also: [`erf(z)`](@ref), [`erfc(z)`](@ref), [`faddeeva_w(z)`](@ref)
 
 # References
 - [Faddeeva Package](http://ab-initio.mit.edu/faddeeva/)
@@ -216,6 +216,7 @@ See also: [`erf(z)`](@ref)
 
 # References
 - [Erfi -- Wolfram MathWorld](https://mathworld.wolfram.com/Erfi.html)
+- [Imaginary error function - Wikipedia](https://en.wikipedia.org/wiki/Error_function#Imaginary_error_function)
 """
 erfi
 # NOTE: erfi(x::Float64) defined in cerf_h.jl
@@ -261,6 +262,7 @@ See also: [`erfc(z)`](@ref), [`erfcx(z)`](@ref)
 
 # References
 - [DLMF: §7.2.3](https://dlmf.nist.gov/7.2#E3)
+- [Faddeeva function - Wikipedia](https://en.wikipedia.org/wiki/Faddeeva_function)
 """
 faddeeva_w
 faddeeva_w(z::T) where {T<:ComplexFloat} = T(w_of_z(ComplexF64(z)))
@@ -316,23 +318,23 @@ Real part of Faddeeva's scaled complex error function of real arguments.
 # Examples
 
 ```jldoctest
-julia> [ (x=x, w=Float32(re_w(x, 0.0))) for x in -2:0.5:2 ]
-9-element Vector{@NamedTuple{x::Float64, w::Float32}}:
- (x = -2.0, w = 0.01831564)
- (x = -1.5, w = 0.10539922)
- (x = -1.0, w = 0.36787945)
- (x = -0.5, w = 0.7788008)
- (x = 0.0, w = 1.0)
- (x = 0.5, w = 0.7788008)
- (x = 1.0, w = 0.36787945)
- (x = 1.5, w = 0.10539922)
- (x = 2.0, w = 0.01831564)
+julia> [ (x=x, re_w=Float32(re_w(x, 0.0))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, re_w::Float32}}:
+ (x = -2.0, re_w = 0.01831564)
+ (x = -1.5, re_w = 0.10539922)
+ (x = -1.0, re_w = 0.36787945)
+ (x = -0.5, re_w = 0.7788008)
+ (x = 0.0, re_w = 1.0)
+ (x = 0.5, re_w = 0.7788008)
+ (x = 1.0, re_w = 0.36787945)
+ (x = 1.5, re_w = 0.10539922)
+ (x = 2.0, re_w = 0.01831564)
 
-julia> [ (x=x, w_im=re_w(x, 0.0)) for x in (-Inf, 0.0, Inf) ]
-3-element Vector{@NamedTuple{x::Float64, w_im::Float64}}:
- (x = -Inf, w_im = 0.0)
- (x = 0.0, w_im = 1.0)
- (x = Inf, w_im = 0.0)
+julia> [ (x=x, re_w=re_w(x, 0.0)) for x in (-Inf, 0.0, Inf) ]
+3-element Vector{@NamedTuple{x::Float64, re_w::Float64}}:
+ (x = -Inf, re_w = 0.0)
+ (x = 0.0, re_w = 1.0)
+ (x = Inf, re_w = 0.0)
 
 julia> faddeeva_w(1.0+2.0im) - complex(re_w(1.0,2.0), im_w(1.0,2.0))
 0.0 + 0.0im
@@ -471,15 +473,15 @@ It is implicitly defined by:
 ```jldoctest
 julia> σ, γ = 1.3, 0.5;
 
-julia> [ (x=x, voigt=Float32(voigt(x, σ, γ))) for x in -10:3.0:10 ]
+julia> [ (x=x, voigt=Float32(voigt(x, σ, γ))) for x in -12:4.0:12 ]
 7-element Vector{@NamedTuple{x::Float64, voigt::Float32}}:
- (x = -10.0, voigt = 0.0016752308)
- (x = -7.0, voigt = 0.0036378063)
+ (x = -12.0, voigt = 0.0011444782)
+ (x = -8.0, voigt = 0.0027030057)
  (x = -4.0, voigt = 0.016749112)
- (x = -1.0, voigt = 0.18637252)
- (x = 2.0, voigt = 0.100623265)
- (x = 5.0, voigt = 0.008416025)
+ (x = 0.0, voigt = 0.23147874)
+ (x = 4.0, voigt = 0.016749112)
  (x = 8.0, voigt = 0.0027030057)
+ (x = 12.0, voigt = 0.0011444782)
 
 julia> Float32(voigt(0.0, σ, γ))    # peak
 0.23147874f0
@@ -489,8 +491,8 @@ julia> Float32(voigt(0.0, σ, γ)) / 2  # half peak
 
 julia> hwhm_x = voigt_hwhm(σ, γ);   # here voigt takes exactly half the peak value
 
-julia> voigt(hwhm_x, σ, γ) - voigt(0.0, σ, γ)/2
-0.0
+julia> voigt(hwhm_x, σ, γ) ≈ voigt(0.0, σ, γ)/2
+true
 ```
 
 See also: [`voigt(x, sigma, gamma)`](@ref)
