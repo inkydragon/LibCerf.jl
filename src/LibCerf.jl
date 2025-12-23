@@ -473,15 +473,15 @@ It is implicitly defined by:
 ```jldoctest
 julia> σ, γ = 1.3, 0.5;
 
-julia> [ (x=x, voigt=Float32(voigt(x, σ, γ))) for x in -10:3.0:10 ]
+julia> [ (x=x, voigt=Float32(voigt(x, σ, γ))) for x in -12:4.0:12 ]
 7-element Vector{@NamedTuple{x::Float64, voigt::Float32}}:
- (x = -10.0, voigt = 0.0016752308)
- (x = -7.0, voigt = 0.0036378063)
+ (x = -12.0, voigt = 0.0011444782)
+ (x = -8.0, voigt = 0.0027030057)
  (x = -4.0, voigt = 0.016749112)
- (x = -1.0, voigt = 0.18637252)
- (x = 2.0, voigt = 0.100623265)
- (x = 5.0, voigt = 0.008416025)
+ (x = 0.0, voigt = 0.23147874)
+ (x = 4.0, voigt = 0.016749112)
  (x = 8.0, voigt = 0.0027030057)
+ (x = 12.0, voigt = 0.0011444782)
 
 julia> Float32(voigt(0.0, σ, γ))    # peak
 0.23147874f0
@@ -491,8 +491,8 @@ julia> Float32(voigt(0.0, σ, γ)) / 2  # half peak
 
 julia> hwhm_x = voigt_hwhm(σ, γ);   # here voigt takes exactly half the peak value
 
-julia> voigt(hwhm_x, σ, γ) - voigt(0.0, σ, γ)/2
-0.0
+julia> voigt(hwhm_x, σ, γ) ≈ voigt(0.0, σ, γ)/2
+true
 ```
 
 See also: [`voigt(x, sigma, gamma)`](@ref)
