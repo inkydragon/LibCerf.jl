@@ -109,5 +109,21 @@ lineplot(-5, 5, re_dawson;
 ## Voigt Functions
 ```@docs
 LibCerf.voigt
+```
+
+```@docs
 LibCerf.voigt_hwhm
+```
+```@example plot
+using UnicodePlots
+# Plot Voigt function
+σ, γ = 1.3, 0.5;
+voigt_σγ(x) = LibCerf.voigt(x, σ, γ)
+plt = lineplot(-5, 5, voigt_σγ; title="Voigt(z; σ=$σ, γ=$γ)", ylim=(0.25, -0.05))
+# Plot y_half and x_hwhm
+y_peak = voigt(0.0, σ, γ)
+y_half = Float32(y_peak / 2)        # Half peak
+x_hwhm = Float32(voigt_hwhm(σ, γ))  # Get x where y = y_half
+hline!(plt, y_half; name="y_half = $y_half")
+vline!(plt, x_hwhm; name="x_hwhm = $x_hwhm")
 ```
