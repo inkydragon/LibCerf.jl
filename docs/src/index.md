@@ -115,7 +115,7 @@ using UnicodePlots
 # Plot Voigt function
 σ, γ = 2.0, 1.0;
 gauss(x) = LibCerf.voigt(x, σ, 0.0)     # Gauss (Normal) distribution
-lorentz(x) = LibCerf.voigt(x, 0.0, γ)   # Cauchy–Lorentz distribution 
+lorentz(x) = LibCerf.voigt(x, 0.0, γ)   # Cauchy–Lorentz distribution
 voigt_σγ(x) = LibCerf.voigt(x, σ, γ)
 plt = lineplot(-5, 5, [gauss, lorentz, voigt_σγ]
     ; title="Voigt(z; σ, γ), G(x; σ), L(x; γ)"
@@ -132,9 +132,9 @@ using UnicodePlots
 voigt_σγ(x) = LibCerf.voigt(x, σ, γ)
 plt = lineplot(-5, 5, voigt_σγ; title="Voigt(z; σ=$σ, γ=$γ)", ylim=(0.25, -0.05))
 # Plot y_half and x_hwhm
-y_peak = voigt(0.0, σ, γ)
+y_peak = LibCerf.voigt(0.0, σ, γ)
 y_half = Float32(y_peak / 2)        # Half peak
-x_hwhm = Float32(voigt_hwhm(σ, γ))  # Get x where y = y_half
+x_hwhm = Float32(LibCerf.voigt_hwhm(σ, γ))  # Get x where y = y_half
 hline!(plt, y_half; name="y_half = $y_half")
 vline!(plt, x_hwhm; name="x_hwhm = $x_hwhm")
 ```
