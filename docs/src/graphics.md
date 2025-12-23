@@ -5,6 +5,9 @@ Plot graphics setup:
 using LibCerf
 # using Pkg; Pkg.add("UnicodePlots")
 using UnicodePlots
+
+# Save png in CI or run as script
+is_ci() = get(ENV, "CI", "") == "true" || !isinteractive()
 ```
 
 ## Error Functions
@@ -52,7 +55,7 @@ with_theme(colormap = cmap) do
     Colorbar(fig[1, 2], pltobj; height = Relative(0.5))
     colsize!(fig.layout, 1, Aspect(1, 1.0))
     resize_to_layout!(fig)
-    isinteractive() ? fig : save(fig_name, fig)
+    is_ci() ? save(fig_name, fig) : fig
 end
 ```
 ![abs(erf(z))](abs_erf.png)
@@ -96,7 +99,7 @@ with_theme(colormap = cmap) do
     Colorbar(fig[1, 2], pltobj; height = Relative(0.5))
     colsize!(fig.layout, 1, Aspect(1, 1.0))
     resize_to_layout!(fig)
-    isinteractive() ? fig : save(fig_name, fig)
+    is_ci() ? save(fig_name, fig) : fig
 end
 ```
 ![angle(erf(z))](angle_erf.png)
@@ -136,7 +139,7 @@ with_theme(colormap = cmap) do
     Colorbar(fig[1, 2], pltobj; height = Relative(0.5))
     colsize!(fig.layout, 1, Aspect(1, 1.0))
     resize_to_layout!(fig)
-    isinteractive() ? fig : save(fig_name, fig)
+    is_ci() ? save(fig_name, fig) : fig
 end
 ```
 ![abs(erfc(z))](abs_erfc.png)
