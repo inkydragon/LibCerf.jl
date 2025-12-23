@@ -74,7 +74,7 @@ LibCerf.faddeeva_w
 using UnicodePlots
 re_w(x) = real(LibCerf.re_w(x, 0.0))
 lineplot(-4, 4, [re_w, im_w];
-    title="Rm[w(z)] and Re[w(z)]", ylabel="w(z)", ylim=(1, -0.75))
+    title="Re[w(z)] and Im[w(z)]", ylabel="w(z)", ylim=(1, -0.75))
 ```
 
 ```@docs
@@ -114,10 +114,10 @@ LibCerf.voigt
 using UnicodePlots
 # Plot Voigt function
 σ, γ = 2.0, 1.0;
-guass(x) = LibCerf.voigt(x, σ, 0.0)     # Guass (Normal) distribution
+gauss(x) = LibCerf.voigt(x, σ, 0.0)     # Gauss (Normal) distribution
 lorentz(x) = LibCerf.voigt(x, 0.0, γ)   # Cauchy–Lorentz distribution 
 voigt_σγ(x) = LibCerf.voigt(x, σ, γ)
-plt = lineplot(-5, 5, [guass, lorentz, voigt_σγ]
+plt = lineplot(-5, 5, [gauss, lorentz, voigt_σγ]
     ; title="Voigt(z; σ, γ), G(x; σ), L(x; γ)"
     , height=20, width=60)
 ```
