@@ -98,6 +98,13 @@ lineplot(-2.5, 2.5, re_w; title="Re[w(z)]", ylabel="re_w(x, 0.0)")
 ```@docs
 LibCerf.dawson
 ```
+Real part plot of `dawson(z)`:
+```@example plot
+using UnicodePlots
+re_dawson(x) = real(LibCerf.dawson(complex(x)))
+lineplot(-5, 5, re_dawson;
+    title="Re[Dawson(z)]", ylabel="dawson(x+0.0im)", ylim=(0.75, -0.75))
+```
 
 ## Voigt Functions
 ```@docs
