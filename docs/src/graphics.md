@@ -18,6 +18,22 @@ re_erfc10(x) = real(LibCerf.erfc(complex(10*x)))
 lineplot(-3, 3, [re_erfc, re_erfc10]; title="erfc(x) and erfc(10*x)", width=65)
 ```
 
+### Complex
+
+> [DLMF: §7.3(ii) Complex Variable](https://dlmf.nist.gov/7.3#ii)
+
+```@example plot
+erf_abs(x, y) = abs(erf(x + y*im))
+# TODO: zlim=(0, 5)
+surfaceplot(-3:0.01:3, -3:0.01:3, erf_abs; title="|erf(x+iy)|")
+```
+
+```@example plot
+erfc_abs(x, y) = abs(erfc(x + y*im))
+# TODO: zlim=(0, 5)
+surfaceplot(-3:0.01:3, -3:0.01:3, erfc_abs; title="|erfc(x+iy)|")
+```
+
 ## Dawson’s Integral
 
 > [DLMF: Figure 7.3.2](https://dlmf.nist.gov/7.3#F2):
