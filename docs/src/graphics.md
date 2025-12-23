@@ -18,8 +18,9 @@ Depth = 3
 ```
 
 
-## Error Functions
+## `erfc(z)`
 
+### `erfc(x)` and `erfc(10*x)`
 > [DLMF: Figure 7.3.1](https://dlmf.nist.gov/7.3#F1):
 > Complementary error functions `erfc(x)` and `erfc(10*x)`, `−3 ≤ x ≤ 3`.
 
@@ -29,11 +30,11 @@ re_erfc10(x) = real(LibCerf.erfc(complex(10*x)))
 lineplot(-3, 3, [re_erfc, re_erfc10]; title="erfc(x) and erfc(10*x)", width=65)
 ```
 
-### 2D erf
 
-> [Erf -- from Wolfram MathWorld](https://mathworld.wolfram.com/Erf.html):
+## `erf(z)`
 
-- `Re[erf(z)]`
+### 2D `Re[erf(z)]`
+> [Erf -- MathWorld](https://mathworld.wolfram.com/Erf.html): `Re[erf(z)]`
 
 ```@example plot
 steps = 1000
@@ -45,7 +46,8 @@ contourplot(x, y, f
     levels=16, height=20, width=50)
 ```
 
-- `Im[erf(z)]`
+### 2D `Im[erf(z)]`
+> [Erf -- MathWorld](https://mathworld.wolfram.com/Erf.html): `Im[erf(z)]`
 
 ```@example plot
 steps = 1000
@@ -57,7 +59,8 @@ contourplot(x, y, f
     levels=10, height=20, width=50)
 ```
 
-- `|erf(z)|`
+### 2D `|erf(z)|`
+> [Erf -- MathWorld](https://mathworld.wolfram.com/Erf.html): `|erf(z)|`
 
 ```@example plot
 steps = 1000
@@ -69,7 +72,7 @@ contourplot(x, y, abs_erf
     levels=10, height=20, width=50)
 ```
 
-### Modulus of erf
+### 3D `|erf(z)|`
 
 > [DLMF: §Figure 7.3.5](https://dlmf.nist.gov/7.3#F5):
 > `|erf⁡(x+i⁢y)|, −3 ≤ x ≤ 3, −3 ≤ y ≤ 3`.
@@ -109,9 +112,10 @@ end
 # ![abs(erf(z))](abs_erf.png)
 ```
 
-### Angle of erf
+### 3D `Arg[erf(z)]`
 
 > [Erf - Wolfram](https://reference.wolfram.com/language/ref/Erf.html):
+> `ComplexPlot3D[Erf[z]]`
 
 ```julia
 # @example plot
@@ -154,7 +158,7 @@ end
 # ![angle(erf(z))](angle_erf.png)
 ```
 
-### Modulus of erfc
+### 3D `|erfc(z)|`
 
 > [DLMF: §Figure 7.3.6](https://dlmf.nist.gov/7.3#F6):
 > `|erf⁡c(x+i⁢y)|, −3 ≤ x ≤ 3, −3 ≤ y ≤ 3`.
