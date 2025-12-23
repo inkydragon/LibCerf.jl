@@ -10,6 +10,13 @@ using UnicodePlots
 is_ci() = get(ENV, "CI", "") == "true" || !isinteractive()
 ```
 
+## Page TOC
+
+```@contents
+Pages = ["graphics.md"]
+Depth = 3
+```
+
 
 ## Error Functions
 
@@ -20,6 +27,46 @@ is_ci() = get(ENV, "CI", "") == "true" || !isinteractive()
 re_erfc(x) = real(LibCerf.erfc(complex(x)))
 re_erfc10(x) = real(LibCerf.erfc(complex(10*x)))
 lineplot(-3, 3, [re_erfc, re_erfc10]; title="erfc(x) and erfc(10*x)", width=65)
+```
+
+### 2D erf
+
+> [Erf -- from Wolfram MathWorld](https://mathworld.wolfram.com/Erf.html):
+
+- `Re[erf(z)]`
+
+```@example plot
+steps = 1000
+x = y = range(start=-2, stop=2; length=steps)
+f(x,y) = clamp(real(erf(complex(x,y))), -4.0, 4.0)
+contourplot(x, y, f
+    ; title = "Re[erf(z)]",
+    xlabel="x", ylabel="y",
+    levels=16, height=20, width=50)
+```
+
+- `Im[erf(z)]`
+
+```@example plot
+steps = 1000
+x = y = range(start=-2, stop=2; length=steps)
+f(x,y) = clamp(imag(erf(complex(x,y))), -4.0, 4.0)
+contourplot(x, y, f
+    ; title = "Im[erf(z)]",
+    xlabel="x", ylabel="y",
+    levels=10, height=20, width=50)
+```
+
+- `|erf(z)|`
+
+```@example plot
+steps = 1000
+x = y = range(start=-2, stop=2; length=steps)
+abs_erf(x,y) = clamp(abs(erf(complex(x,y))), -4.0, 4.0)
+contourplot(x, y, abs_erf
+    ; title = "|erf(z)|",
+    xlabel="x", ylabel="y",
+    levels=10, height=20, width=50)
 ```
 
 ### Modulus of erf
