@@ -110,6 +110,17 @@ lineplot(-5, 5, re_dawson;
 ```@docs
 LibCerf.voigt
 ```
+```@example plot
+using UnicodePlots
+# Plot Voigt function
+σ, γ = 2.0, 1.0;
+guass(x) = LibCerf.voigt(x, σ, 0.0)     # Guass (Normal) distribution
+lorentz(x) = LibCerf.voigt(x, 0.0, γ)   # Cauchy–Lorentz distribution 
+voigt_σγ(x) = LibCerf.voigt(x, σ, γ)
+plt = lineplot(-5, 5, [guass, lorentz, voigt_σγ]
+    ; title="Voigt(z; σ, γ), G(x; σ), L(x; γ)"
+    , height=20, width=60)
+```
 
 ```@docs
 LibCerf.voigt_hwhm
