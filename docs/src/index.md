@@ -69,8 +69,29 @@ lineplot(-2, 2, re_erfi; title="Re[Erfi(z)]", ylabel="erfi(x)")
 ## Faddeeva function
 ```@docs
 LibCerf.faddeeva_w
+```
+```@example plot
+using UnicodePlots
+re_w(x) = real(LibCerf.re_w(x, 0.0))
+lineplot(-4, 4, [re_w, im_w];
+    title="Rm[w(z)] and Re[w(z)]", ylabel="w(z)", ylim=(1, -0.75))
+```
+
+```@docs
 LibCerf.im_w
+```
+```@example plot
+using UnicodePlots
+lineplot(-5, 5, im_w; title="Im[w(z)]", ylabel="im_w(x)", ylim=(0.75, -0.75))
+```
+
+```@docs
 LibCerf.re_w
+```
+```@example plot
+using UnicodePlots
+re_w(x) = real(LibCerf.re_w(x, 0.0))
+lineplot(-2.5, 2.5, re_w; title="Re[w(z)]", ylabel="re_w(x, 0.0)")
 ```
 
 ## Dawson’s Integral
