@@ -318,23 +318,23 @@ Real part of Faddeeva's scaled complex error function of real arguments.
 # Examples
 
 ```jldoctest
-julia> [ (x=x, w=Float32(re_w(x, 0.0))) for x in -2:0.5:2 ]
-9-element Vector{@NamedTuple{x::Float64, w::Float32}}:
- (x = -2.0, w = 0.01831564)
- (x = -1.5, w = 0.10539922)
- (x = -1.0, w = 0.36787945)
- (x = -0.5, w = 0.7788008)
- (x = 0.0, w = 1.0)
- (x = 0.5, w = 0.7788008)
- (x = 1.0, w = 0.36787945)
- (x = 1.5, w = 0.10539922)
- (x = 2.0, w = 0.01831564)
+julia> [ (x=x, re_w=Float32(re_w(x, 0.0))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, re_w::Float32}}:
+ (x = -2.0, re_w = 0.01831564)
+ (x = -1.5, re_w = 0.10539922)
+ (x = -1.0, re_w = 0.36787945)
+ (x = -0.5, re_w = 0.7788008)
+ (x = 0.0, re_w = 1.0)
+ (x = 0.5, re_w = 0.7788008)
+ (x = 1.0, re_w = 0.36787945)
+ (x = 1.5, re_w = 0.10539922)
+ (x = 2.0, re_w = 0.01831564)
 
-julia> [ (x=x, w_im=re_w(x, 0.0)) for x in (-Inf, 0.0, Inf) ]
-3-element Vector{@NamedTuple{x::Float64, w_im::Float64}}:
- (x = -Inf, w_im = 0.0)
- (x = 0.0, w_im = 1.0)
- (x = Inf, w_im = 0.0)
+julia> [ (x=x, re_w=re_w(x, 0.0)) for x in (-Inf, 0.0, Inf) ]
+3-element Vector{@NamedTuple{x::Float64, re_w::Float64}}:
+ (x = -Inf, re_w = 0.0)
+ (x = 0.0, re_w = 1.0)
+ (x = Inf, re_w = 0.0)
 
 julia> faddeeva_w(1.0+2.0im) - complex(re_w(1.0,2.0), im_w(1.0,2.0))
 0.0 + 0.0im
