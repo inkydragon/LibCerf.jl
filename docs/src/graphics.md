@@ -10,6 +10,7 @@ using UnicodePlots
 is_ci() = get(ENV, "CI", "") == "true" || !isinteractive()
 ```
 
+
 ## Error Functions
 
 > [DLMF: Figure 7.3.1](https://dlmf.nist.gov/7.3#F1):
@@ -26,7 +27,8 @@ lineplot(-3, 3, [re_erfc, re_erfc10]; title="erfc(x) and erfc(10*x)", width=65)
 > [DLMF: §Figure 7.3.5](https://dlmf.nist.gov/7.3#F5):
 > `|erf⁡(x+i⁢y)|, −3 ≤ x ≤ 3, −3 ≤ y ≤ 3`.
 
-```@example plot
+```julia
+# @example plot
 using GLMakie, LaTeXStrings
 GLMakie.activate!()
 
@@ -57,14 +59,15 @@ with_theme(colormap = cmap) do
     resize_to_layout!(fig)
     is_ci() ? save(fig_name, fig) : fig
 end
+# ![abs(erf(z))](abs_erf.png)
 ```
-![abs(erf(z))](abs_erf.png)
 
 ### Angle of erf
 
 > [Erf - Wolfram](https://reference.wolfram.com/language/ref/Erf.html):
 
-```@example plot
+```julia
+# @example plot
 using GLMakie, LaTeXStrings
 GLMakie.activate!()
 
@@ -101,16 +104,16 @@ with_theme(colormap = cmap) do
     resize_to_layout!(fig)
     is_ci() ? save(fig_name, fig) : fig
 end
+# ![angle(erf(z))](angle_erf.png)
 ```
-![angle(erf(z))](angle_erf.png)
-
 
 ### Modulus of erfc
 
 > [DLMF: §Figure 7.3.6](https://dlmf.nist.gov/7.3#F6):
 > `|erf⁡c(x+i⁢y)|, −3 ≤ x ≤ 3, −3 ≤ y ≤ 3`.
 
-```@example plot
+```julia
+# @example plot
 using GLMakie, LaTeXStrings
 GLMakie.activate!()
 
@@ -141,8 +144,8 @@ with_theme(colormap = cmap) do
     resize_to_layout!(fig)
     is_ci() ? save(fig_name, fig) : fig
 end
+# ![abs(erfc(z))](abs_erfc.png)
 ```
-![abs(erfc(z))](abs_erfc.png)
 
 
 ## Dawson’s Integral

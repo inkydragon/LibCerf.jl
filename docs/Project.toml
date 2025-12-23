@@ -1,6 +1,4 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
-GLMakie = "e9467ef8-e4e7-5192-8a1a-b1aee30e663a"
-LaTeXStrings = "b964fa9f-0449-5b57-a5c2-d3ea65f4040f"
 LibCerf = "3328f0eb-23dc-40af-8ac5-38dea7eda2f6"
 UnicodePlots = "b8865327-cd53-5732-bb35-84acbb429228"
