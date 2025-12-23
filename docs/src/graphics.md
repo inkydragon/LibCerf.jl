@@ -61,10 +61,39 @@ end
 > `|erf⁡c(x+i⁢y)|, −3 ≤ x ≤ 3, −3 ≤ y ≤ 3`.
 
 ```@example plot
-erfc_abs(x, y) = abs(erfc(x + y*im))
-# TODO: zlim=(0, 5)
-surfaceplot(-3:0.01:3, -3:0.01:3, erfc_abs; title="|erfc(x+iy)|")
+using GLMakie, LaTeXStrings
+GLMakie.activate!()
+
+#= Setup params =#
+xlim = ylim = (lo=-3, hi=3)
+zlim = (lo=0, hi=5)
+steps = 5000
+x = y = range(start=xlim.lo, stop=xlim.hi; length=steps+1)
+func = erfc
+cmap = :jet
+font_size = 22
+title = "|$(func)(x+iy)|"
+fig_name = "abs_$(func).png"
+
+#= Eval functions =#
+z = @. abs(func(complex(x, y')));
+
+#= Draw surface plot =#
+with_theme(colormap = cmap) do
+    fig = Figure(; fontsize = font_size)
+    ax3d = Axis3(fig[1, 1]; title = title,
+        limits = (xlim..., ylim..., zlim...),
+        xreversed = true, yreversed = true,
+        perspectiveness = 0.5, azimuth = 2.19, elevation = 0.57)
+    pltobj = surface!(ax3d, x, y, z; colorrange=(zlim...,))
+    Colorbar(fig[1, 2], pltobj; height = Relative(0.5))
+    colsize!(fig.layout, 1, Aspect(1, 1.0))
+    resize_to_layout!(fig)
+    isinteractive() ? fig : save(fig_name, fig)
+end
 ```
+![abs(erfc(z))](abs_erfc.png)
+
 
 ## Dawson’s Integral
 
