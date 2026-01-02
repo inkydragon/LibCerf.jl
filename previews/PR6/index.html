@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Home · LibCerf.jl</title><meta name="title" content="Home · LibCerf.jl"/><meta property="og:title" content="Home · LibCerf.jl"/><meta property="twitter:title" content="Home · LibCerf.jl"/><meta name="description" content="Documentation for LibCerf.jl."/><meta property="og:description" content="Documentation for LibCerf.jl."/><meta property="twitter:description" content="Documentation for LibCerf.jl."/><meta property="og:url" content="https://cyhan.dev/LibCerf.jl/"/><meta property="twitter:url" content="https://cyhan.dev/LibCerf.jl/"/><link rel="canonical" href="https://cyhan.dev/LibCerf.jl/"/><script data-outdated-warner src="assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="assets/documenter.js"></script><script src="search_index.js"></script><script src="siteinfo.js"></script><script src="../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href>LibCerf.jl</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li class="is-active"><a class="tocitem" href>Home</a><ul class="internal"><li><a class="tocitem" href="#Index"><span>Index</span></a></li><li><a class="tocitem" href="#Error-Functions"><span>Error Functions</span></a></li><li><a class="tocitem" href="#Faddeeva-function"><span>Faddeeva function</span></a></li><li><a class="tocitem" href="#Dawson’s-Integral"><span>Dawson’s Integral</span></a></li><li><a class="tocitem" href="#Voigt-Functions"><span>Voigt Functions</span></a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Home</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Home</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/inkydragon/LibCerf.jl" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/inkydragon/LibCerf.jl/blob/main/docs/src/index.md" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="LibCerf"><a class="docs-heading-anchor" href="#LibCerf">LibCerf</a><a id="LibCerf-1"></a><a class="docs-heading-anchor-permalink" href="#LibCerf" title="Permalink"></a></h1><p>Documentation for <a href="https://github.com/inkydragon/LibCerf.jl">LibCerf</a>.</p><article><details class="docstring" open="true"><summary id="LibCerf.LibCerf"><a class="docstring-binding" href="#LibCerf.LibCerf"><code>LibCerf.LibCerf</code></a> — <span class="docstring-category">Module</span></summary><section><div><pre><code class="language-julia hljs">LibCerf</code></pre><p>A Julia wrapper for the <code>libcerf</code> library.</p><blockquote><p><code>libcerf</code>, a self-contained numeric library that provides an efficient and accurate implementation of complex error functions, along with Dawson, Faddeeva, and Voigt functions.</p></blockquote><p><strong>Exported functions</strong></p><ul><li><a href="graphics/#erf(z)"><code>erf(z)</code></a>:     Complex error function</li><li><a href="graphics/#erfc(z)"><code>erfc(z)</code></a>:    Complementary error function</li><li><a href="#LibCerf.erfcx"><code>erfcx(z)</code></a>, <code>erfcx(x)</code>:   Underflow-compensated complementary error function</li><li><a href="#LibCerf.erfi"><code>erfi(z)</code></a>, <code>erfi(x)</code>:   Imaginary error function</li><li><a href="#LibCerf.faddeeva_w"><code>faddeeva_w(z)</code></a>:  Faddeeva&#39;s scaled complex error function<ul><li><a href="#LibCerf.im_w"><code>im_w(x)</code></a>:        imaginary part of <code>faddeeva_w(complex(x, 0.0))</code></li><li><a href="#LibCerf.im_w"><code>im_w(re, im)</code></a>:   imaginary part of <code>faddeeva_w(complex(re, im))</code></li><li><a href="#LibCerf.re_w"><code>re_w(re, im)</code></a>:   real part of <code>faddeeva_w(complex(re, im))</code></li></ul></li><li><a href="#LibCerf.dawson"><code>dawson(z)</code></a>, <code>dawson(x)</code>: Dawson&#39;s integral</li><li><a href="#LibCerf.voigt"><code>voigt(x, sigma, gamma)</code></a>:   Voigt&#39;s convolution of a Gaussian and a Lorentzian</li><li><a href="#LibCerf.voigt_hwhm"><code>voigt_hwhm(sigma, gamma)</code></a>:   Half width at half maximum of the Voigt profile</li></ul><p><strong>References</strong></p><ul><li>S. G. Johnson, J. Wuttke: libcerf, numeric library for complex error functions,   https://jugit.fz-juelich.de/mlz/libcerf</li></ul></div><a class="docs-sourcelink" target="_blank" href="https://github.com/inkydragon/LibCerf.jl/blob/002a91101ad97f99b48cbec6fa8e52acfd998682/src/LibCerf.jl#L2-L33">source</a></section></details></article><h2 id="Index"><a class="docs-heading-anchor" href="#Index">Index</a><a id="Index-1"></a><a class="docs-heading-anchor-permalink" href="#Index" title="Permalink"></a></h2><ul><li><a href="#LibCerf.LibCerf"><code>LibCerf.LibCerf</code></a></li><li><a href="#LibCerf.dawson"><code>LibCerf.dawson</code></a></li><li><a href="#LibCerf.erf"><code>LibCerf.erf</code></a></li><li><a href="#LibCerf.erfc"><code>LibCerf.erfc</code></a></li><li><a href="#LibCerf.erfcx"><code>LibCerf.erfcx</code></a></li><li><a href="#LibCerf.erfi"><code>LibCerf.erfi</code></a></li><li><a href="#LibCerf.faddeeva_w"><code>LibCerf.faddeeva_w</code></a></li><li><a href="#LibCerf.im_w"><code>LibCerf.im_w</code></a></li><li><a href="#LibCerf.re_w"><code>LibCerf.re_w</code></a></li><li><a href="#LibCerf.voigt"><code>LibCerf.voigt</code></a></li><li><a href="#LibCerf.voigt_hwhm"><code>LibCerf.voigt_hwhm</code></a></li></ul><h2 id="Error-Functions"><a class="docs-heading-anchor" href="#Error-Functions">Error Functions</a><a id="Error-Functions-1"></a><a class="docs-heading-anchor-permalink" href="#Error-Functions" title="Permalink"></a></h2><article><details class="docstring" open="true"><summary id="LibCerf.erf"><a class="docstring-binding" href="#LibCerf.erf"><code>LibCerf.erf</code></a> — <span class="docstring-category">Function</span></summary><section><div><pre><code class="language-julia hljs">erf(z)</code></pre><p>Error function of complex arguments.</p><p class="math-container">\[\text{erf}(z) = \frac{2}{\sqrt{\pi}} \int_0^z e^{-t^2} dt\]</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; [ (x=x, erf=Float32(erf(complex(x)))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, erf::Float32}}:
+ (x = -2.0, erf = -0.9953223)
+ (x = -1.5, erf = -0.96610516)
+ (x = -1.0, erf = -0.8427008)
+ (x = -0.5, erf = -0.5204999)
+ (x = 0.0, erf = 0.0)
+ (x = 0.5, erf = 0.5204999)
+ (x = 1.0, erf = 0.8427008)
+ (x = 1.5, erf = 0.96610516)
+ (x = 2.0, erf = 0.9953223)
+
+julia&gt; [ (x=x, erf=erf(complex(x))) for x in (-Inf, -0.0, 0.0, Inf) ]
+4-element Vector{@NamedTuple{x::Float64, erf::ComplexF64}}:
+ (x = -Inf, erf = -1.0 + 0.0im)
+ (x = -0.0, erf = -0.0 + 0.0im)
+ (x = 0.0, erf = 0.0 + 0.0im)
+ (x = Inf, erf = 1.0 + 0.0im)
+
+julia&gt; erf(complex(3.14)) + erfc(complex(3.14))
+1.0 + 0.0im</code></pre><p>See also: <a href="graphics/#erfc(z)"><code>erfc(z)</code></a>, <a href="#LibCerf.erfcx"><code>erfcx(z)</code></a>, <a href="#LibCerf.erfi"><code>erfi(z)</code></a></p><p><strong>References</strong></p><ul><li><a href="https://dlmf.nist.gov/7.2#E1">DLMF: §7.2.1</a></li><li><a href="https://mathworld.wolfram.com/Erf.html">Erf – Wolfram MathWorld</a></li></ul></div><a class="docs-sourcelink" target="_blank" href="https://github.com/inkydragon/LibCerf.jl/blob/002a91101ad97f99b48cbec6fa8e52acfd998682/src/LibCerf.jl#L44-L83">source</a></section></details></article><p>Real part plot of <code>erf(z)</code>:</p><pre><code class="language-julia hljs">using UnicodePlots
+re_erf(x) = real(LibCerf.erf(complex(x)))
+lineplot(-4, 4, re_erf; title=&quot;Re[Erf(z)]&quot;, ylabel=&quot;erf(x)&quot;)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">             ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr97"><span class="sgr1">Re[Erf(z)]</span></span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀          
+             <span class="sgr90">┌────────────────────────────────────────┐</span>          
+           <span class="sgr90">1</span> <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀<span class="sgr32">⣀⠔⠊⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉</span><span class="sgr90">│</span> <span class="sgr32">re_erf(x)</span>
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀<span class="sgr32">⢀⡔⠁</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>          
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀<span class="sgr32">⡜</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>          
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀<span class="sgr32">⡸</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>          
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇<span class="sgr32">⢠⠃</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>          
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⣇⡇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>          
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡟</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>          
+   erf(x)    <span class="sgr90">│</span>⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤<span class="sgr32">⢤⡧</span>⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤<span class="sgr90">│</span>          
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡎</span>⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>          
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡸⠁</span>⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>          
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀⠇</span>⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>          
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡜</span>⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>          
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡸⠁</span>⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>          
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡜⠁</span>⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>          
+          <span class="sgr90">-1</span> <span class="sgr90">│</span><span class="sgr32">⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⡠⠔⠋</span>⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>          
+             <span class="sgr90">└────────────────────────────────────────┘</span>          
+             ⠀<span class="sgr90">-4</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">4</span>⠀          
+             ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀x⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀          </code></pre><article><details class="docstring" open="true"><summary id="LibCerf.erfc"><a class="docstring-binding" href="#LibCerf.erfc"><code>LibCerf.erfc</code></a> — <span class="docstring-category">Function</span></summary><section><div><pre><code class="language-julia hljs">erfc(z)</code></pre><p>Complementary error function of complex arguments.</p><p class="math-container">\[\text{erfc}(z)
+= \frac{2}{\sqrt{\pi}} \int_z^\infty e^{-t^2} dt
+= 1 - \text{erf}(z)\]</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; [ (x=x, erfc=Float32(erfc(complex(x)))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, erfc::Float32}}:
+ (x = -2.0, erfc = 1.9953222)
+ (x = -1.5, erfc = 1.9661051)
+ (x = -1.0, erfc = 1.8427008)
+ (x = -0.5, erfc = 1.5204998)
+ (x = 0.0, erfc = 1.0)
+ (x = 0.5, erfc = 0.47950011)
+ (x = 1.0, erfc = 0.1572992)
+ (x = 1.5, erfc = 0.03389485)
+ (x = 2.0, erfc = 0.004677735)
+
+julia&gt; [ (x=x, erfc=erfc(complex(x))) for x in (-Inf, 0.0, Inf) ]
+3-element Vector{@NamedTuple{x::Float64, erfc::ComplexF64}}:
+ (x = -Inf, erfc = 2.0 - 0.0im)
+ (x = 0.0, erfc = 1.0 - 0.0im)
+ (x = Inf, erfc = 0.0 - 0.0im)
+
+julia&gt; erf(complex(3.141)) + erfc(complex(3.141))
+1.0 + 0.0im</code></pre><p>See also: <a href="graphics/#erf(z)"><code>erf(z)</code></a>, <a href="#LibCerf.erfcx"><code>erfcx(z)</code></a></p><p><strong>References</strong></p><ul><li><a href="https://dlmf.nist.gov/7.2#E2">DLMF: §7.2.2</a></li><li><a href="https://mathworld.wolfram.com/Erfc.html">Erfc – Wolfram MathWorld</a></li></ul></div><a class="docs-sourcelink" target="_blank" href="https://github.com/inkydragon/LibCerf.jl/blob/002a91101ad97f99b48cbec6fa8e52acfd998682/src/LibCerf.jl#L87-L126">source</a></section></details></article><p>Real part plot of <code>erfc(z)</code>:</p><pre><code class="language-julia hljs">using UnicodePlots
+re_erfc(x) = real(LibCerf.erfc(complex(x)))
+plt = lineplot(-4, 4, re_erfc; title=&quot;Re[Erfc(z)]&quot;, ylabel=&quot;erfc(x)&quot;);
+lineplot!(plt, 1, 0; name=&quot;y = 1&quot;)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">             ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr97"><span class="sgr1">Re[Erfc(z)]</span></span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀           
+             <span class="sgr90">┌────────────────────────────────────────┐</span>           
+           <span class="sgr90">2</span> <span class="sgr90">│</span><span class="sgr32">⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠑⠢⣄</span>⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr32">re_erfc(x)</span>
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢣⡀</span>⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr34">y = 1</span>     
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢱⡀</span>⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢣</span>⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠈⡆</span>⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢱⡀</span>⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢇</span>⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+   erfc(x)   <span class="sgr90">│</span><span class="sgr34">⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤</span><span class="sgr36">⠼⡧</span><span class="sgr34">⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤</span><span class="sgr90">│</span>           
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⣧</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡏⡇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇<span class="sgr32">⠘⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀<span class="sgr32">⢱</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀<span class="sgr32">⢣</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+             <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀<span class="sgr32">⠈⠣⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+           <span class="sgr90">0</span> <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀<span class="sgr32">⠉⠢⢄⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀</span><span class="sgr90">│</span>           
+             <span class="sgr90">└────────────────────────────────────────┘</span>           
+             ⠀<span class="sgr90">-4</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">4</span>⠀           
+             ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀x⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀           </code></pre><p><code>erf(x)</code> and <code>erfc(x)</code> relations:</p><pre><code class="language-julia hljs">lineplot(-4, 4, [re_erf, re_erfc]; title=&quot;Erf(x) + Erfc(z) = 1&quot;, ylim=(2, -1))</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">           ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr97"><span class="sgr1">Erf(x) + Erfc(z) = 1</span></span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀           
+           <span class="sgr90">┌────────────────────────────────────────┐</span>           
+         <span class="sgr90">2</span> <span class="sgr90">│</span><span class="sgr34">⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠓⠦⡀</span>⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr32">re_erf(x)</span> 
+           <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⠈⢢⡀</span>⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr34">re_erfc(x)</span>
+           <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⢣⡀</span>⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+           <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⢱⡀</span>⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+           <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⢣</span>⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+           <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⣧</span>⠀⠀⠀<span class="sgr32">⢀⡤⠒⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉</span><span class="sgr90">│</span>           
+           <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇<span class="sgr34">⢣</span>⠀<span class="sgr32">⡔⠃</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+   f(x)    <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇<span class="sgr36">⢈⣿</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+           <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇<span class="sgr32">⡜</span>⠀<span class="sgr34">⠣⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+           <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡟</span>⠀⠀⠀<span class="sgr34">⠈⠓⠤⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀</span><span class="sgr90">│</span>           
+           <span class="sgr90">│</span>⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉<span class="sgr32">⡝⡏</span>⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉<span class="sgr90">│</span>           
+           <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡸⠁</span>⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+           <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡜⠁</span>⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+           <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀⠜⠁</span>⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+        <span class="sgr90">-1</span> <span class="sgr90">│</span><span class="sgr32">⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⡤⠖⠁</span>⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+           <span class="sgr90">└────────────────────────────────────────┘</span>           
+           ⠀<span class="sgr90">-4</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">4</span>⠀           
+           ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀x⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀           </code></pre><article><details class="docstring" open="true"><summary id="LibCerf.erfcx"><a class="docstring-binding" href="#LibCerf.erfcx"><code>LibCerf.erfcx</code></a> — <span class="docstring-category">Function</span></summary><section><div><pre><code class="language-julia hljs">erfcx(x)
+erfcx(z)</code></pre><p>Underflow-compensated complementary error function of real or complex arguments.</p><p class="math-container">\[\text{erfcx}(z)
+= \exp(z^2) \text{erfc}(z)
+= w(iz)\]</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; [ (x=x, erfcx=Float32(erfcx(complex(x)))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, erfcx::Float32}}:
+ (x = -2.0, erfcx = 108.9409)
+ (x = -1.5, erfcx = 18.653887)
+ (x = -1.0, erfcx = 5.0089803)
+ (x = -0.5, erfcx = 1.9523605)
+ (x = 0.0, erfcx = 1.0)
+ (x = 0.5, erfcx = 0.61569035)
+ (x = 1.0, erfcx = 0.42758358)
+ (x = 1.5, erfcx = 0.32158542)
+ (x = 2.0, erfcx = 0.25539568)
+
+julia&gt; [ (x=x, erfcx=erfcx(complex(x))) for x in (-Inf, 0.0, Inf) ]
+3-element Vector{@NamedTuple{x::Float64, erfcx::ComplexF64}}:
+ (x = -Inf, erfcx = Inf - 0.0im)
+ (x = 0.0, erfcx = 1.0 - 0.0im)
+ (x = Inf, erfcx = 0.0 - 0.0im)
+
+julia&gt; erfcx(complex(pi)) - exp(pi^2)*erfc(complex(pi))
+0.0 + 0.0im
+
+julia&gt; erfcx(complex(pi)) - faddeeva_w(im * complex(pi))
+0.0 - 0.0im</code></pre><p>See also: <a href="graphics/#erf(z)"><code>erf(z)</code></a>, <a href="graphics/#erfc(z)"><code>erfc(z)</code></a>, <a href="#LibCerf.faddeeva_w"><code>faddeeva_w(z)</code></a></p><p><strong>References</strong></p><ul><li><a href="http://ab-initio.mit.edu/faddeeva/">Faddeeva Package</a></li></ul></div><a class="docs-sourcelink" target="_blank" href="https://github.com/inkydragon/LibCerf.jl/blob/002a91101ad97f99b48cbec6fa8e52acfd998682/src/LibCerf.jl#L130-L174">source</a></section></details></article><p>Real part plot of <code>erfcx(z)</code>:</p><pre><code class="language-julia hljs">using UnicodePlots
+re_erfcx(x) = real(LibCerf.erfcx(complex(x)))
+lineplot(-1.5, 2, re_erfcx; title=&quot;Re[Erfcx(z)]&quot;, ylabel=&quot;erfcx(x)&quot;)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr97"><span class="sgr1">Re[Erfcx(z)]</span></span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀            
+               <span class="sgr90">┌────────────────────────────────────────┐</span>            
+            <span class="sgr90">20</span> <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr32">re_erfcx(x)</span>
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀<span class="sgr32">⡇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀<span class="sgr32">⡇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀<span class="sgr32">⢸</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀<span class="sgr32">⠘⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀<span class="sgr32">⡇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀<span class="sgr32">⢸</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+   erfcx(x)    <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀<span class="sgr32">⠈⡇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢱</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢧</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠈⢆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠈⢢</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠑⢄</span>⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠉⠲⠤⣀⣀</span>⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+             <span class="sgr90">0</span> <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠈⠉⠉⡗⠒⠒⠒⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⣄⣀⣀⣀⣀⣀</span><span class="sgr90">│</span>            
+               <span class="sgr90">└────────────────────────────────────────┘</span>            
+               ⠀<span class="sgr90">-2</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">2</span>⠀            
+               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀x⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀            </code></pre><article><details class="docstring" open="true"><summary id="LibCerf.erfi"><a class="docstring-binding" href="#LibCerf.erfi"><code>LibCerf.erfi</code></a> — <span class="docstring-category">Function</span></summary><section><div><pre><code class="language-julia hljs">erfi(x)
+erfi(z)</code></pre><p>Imaginary error function of real or complex arguments.</p><p class="math-container">\[\text{erfi}(z) = -i \text{erf}(iz)\]</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; [ (x=x, erfi=Float32(erfi(complex(x)))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, erfi::Float32}}:
+ (x = -2.0, erfi = -18.564802)
+ (x = -1.5, erfi = -4.5847335)
+ (x = -1.0, erfi = -1.6504258)
+ (x = -0.5, erfi = -0.6149521)
+ (x = 0.0, erfi = 0.0)
+ (x = 0.5, erfi = 0.6149521)
+ (x = 1.0, erfi = 1.6504258)
+ (x = 1.5, erfi = 4.5847335)
+ (x = 2.0, erfi = 18.564802)
+
+julia&gt; [ (x=x, erfi=erfi(complex(x))) for x in (-Inf, -0.0, 0.0, Inf) ]
+4-element Vector{@NamedTuple{x::Float64, erfi::ComplexF64}}:
+ (x = -Inf, erfi = -Inf + 0.0im)
+ (x = -0.0, erfi = -0.0 + 0.0im)
+ (x = 0.0, erfi = 0.0 + 0.0im)
+ (x = Inf, erfi = Inf + 0.0im)
+
+julia&gt; erfi(complex(pi)) + im*erf(im*complex(pi))
+0.0 + 0.0im</code></pre><p>See also: <a href="graphics/#erf(z)"><code>erf(z)</code></a></p><p><strong>References</strong></p><ul><li><a href="https://mathworld.wolfram.com/Erfi.html">Erfi – Wolfram MathWorld</a></li><li><a href="https://en.wikipedia.org/wiki/Error_function#Imaginary_error_function">Imaginary error function - Wikipedia</a></li></ul></div><a class="docs-sourcelink" target="_blank" href="https://github.com/inkydragon/LibCerf.jl/blob/002a91101ad97f99b48cbec6fa8e52acfd998682/src/LibCerf.jl#L180-L220">source</a></section></details></article><p>Real part plot of <code>erfi(z)</code>:</p><pre><code class="language-julia hljs">using UnicodePlots
+re_erfi(x) = real(LibCerf.erfi(complex(x)))
+lineplot(-2, 2, re_erfi; title=&quot;Re[Erfi(z)]&quot;, ylabel=&quot;erfi(x)&quot;)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr97"><span class="sgr1">Re[Erfi(z)]</span></span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀           
+               <span class="sgr90">┌────────────────────────────────────────┐</span>           
+            <span class="sgr90">20</span> <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀</span><span class="sgr90">│</span> <span class="sgr32">re_erfi(x)</span>
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡜</span><span class="sgr90">│</span>           
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢠⠃</span><span class="sgr90">│</span>           
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀⡎</span>⠀<span class="sgr90">│</span>           
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀⠎</span>⠀⠀<span class="sgr90">│</span>           
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀⡔⠃</span>⠀⠀⠀<span class="sgr90">│</span>           
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⣀⣀⡤⠔⠊⠁</span>⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+   erfi(x)     <span class="sgr90">│</span>⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤<span class="sgr32">⣤⣤⣤⡤⠤⠤⠤⠤⠤⡷⠶⠶⠶⠶⠮⠭⠭⠭</span>⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤<span class="sgr90">│</span>           
+               <span class="sgr90">│</span>⠀⠀⠀⠀⠀<span class="sgr32">⢀⡠⠔⠒⠉⠉⠁</span>⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+               <span class="sgr90">│</span>⠀⠀⠀<span class="sgr32">⢠⠔⠁</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+               <span class="sgr90">│</span>⠀⠀<span class="sgr32">⡰⠃</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+               <span class="sgr90">│</span>⠀<span class="sgr32">⢸</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+               <span class="sgr90">│</span><span class="sgr32">⢠⠇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+               <span class="sgr90">│</span><span class="sgr32">⡎</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+           <span class="sgr90">-20</span> <span class="sgr90">│</span><span class="sgr32">⠃</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>           
+               <span class="sgr90">└────────────────────────────────────────┘</span>           
+               ⠀<span class="sgr90">-2</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">2</span>⠀           
+               ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀x⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀           </code></pre><h2 id="Faddeeva-function"><a class="docs-heading-anchor" href="#Faddeeva-function">Faddeeva function</a><a id="Faddeeva-function-1"></a><a class="docs-heading-anchor-permalink" href="#Faddeeva-function" title="Permalink"></a></h2><article><details class="docstring" open="true"><summary id="LibCerf.faddeeva_w"><a class="docstring-binding" href="#LibCerf.faddeeva_w"><code>LibCerf.faddeeva_w</code></a> — <span class="docstring-category">Function</span></summary><section><div><pre><code class="language-julia hljs">faddeeva_w(z)</code></pre><p>Faddeeva&#39;s scaled complex error function of complex arguments.</p><p class="math-container">\[w(z)
+= e^{-z^2} \text{erfc}(-iz)
+= \text{erfcx}(-iz)\]</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; [ (x=x, w=ComplexF16(faddeeva_w(complex(x)))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, w::ComplexF16}}:
+ (x = -2.0, w = Float16(0.01831) - Float16(0.34)im)
+ (x = -1.5, w = Float16(0.1054) - Float16(0.4832)im)
+ (x = -1.0, w = Float16(0.368) - Float16(0.607)im)
+ (x = -0.5, w = Float16(0.779) - Float16(0.479)im)
+ (x = 0.0, w = Float16(1.0) + Float16(0.0)im)
+ (x = 0.5, w = Float16(0.779) + Float16(0.479)im)
+ (x = 1.0, w = Float16(0.368) + Float16(0.607)im)
+ (x = 1.5, w = Float16(0.1054) + Float16(0.4832)im)
+ (x = 2.0, w = Float16(0.01831) + Float16(0.34)im)
+
+julia&gt; [ (x=x, w=faddeeva_w(complex(x))) for x in (-Inf, -0.0, 0.0, Inf) ]
+4-element Vector{@NamedTuple{x::Float64, w::ComplexF64}}:
+ (x = -Inf, w = 0.0 - 0.0im)
+ (x = -0.0, w = 1.0 - 0.0im)
+ (x = 0.0, w = 1.0 + 0.0im)
+ (x = Inf, w = 0.0 + 0.0im)
+
+julia&gt; faddeeva_w(complex(pi)) - erfcx(-im * complex(pi))
+0.0 + 0.0im</code></pre><p>See also: <a href="graphics/#erfc(z)"><code>erfc(z)</code></a>, <a href="#LibCerf.erfcx"><code>erfcx(z)</code></a></p><p><strong>References</strong></p><ul><li><a href="https://dlmf.nist.gov/7.2#E3">DLMF: §7.2.3</a></li><li><a href="https://en.wikipedia.org/wiki/Faddeeva_function">Faddeeva function - Wikipedia</a></li></ul></div><a class="docs-sourcelink" target="_blank" href="https://github.com/inkydragon/LibCerf.jl/blob/002a91101ad97f99b48cbec6fa8e52acfd998682/src/LibCerf.jl#L226-L266">source</a></section></details></article><pre><code class="language-julia hljs">using UnicodePlots
+re_w(x) = real(LibCerf.re_w(x, 0.0))
+lineplot(-4, 4, [re_w, im_w];
+    title=&quot;Re[w(z)] and Im[w(z)]&quot;, ylabel=&quot;w(z)&quot;, ylim=(1, -0.75))</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr97"><span class="sgr1">Re[w(z)] and Im[w(z)]</span></span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀        
+              <span class="sgr90">┌────────────────────────────────────────┐</span>        
+            <span class="sgr90">1</span> <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡰⠋⡏⢆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr32">re_w(x)</span>
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢰⠃</span>⠀⡇<span class="sgr32">⠈⢆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr34">im_w(x)</span>
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀⠇</span>⠀⠀⡇⠀<span class="sgr32">⠘⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡜</span>⠀⠀⠀⡇⠀⠀<span class="sgr36">⣵</span><span class="sgr34">⠒⠢⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡰⠁</span>⠀⠀⠀⡇⠀<span class="sgr34">⡜</span>⠀<span class="sgr32">⢇</span>⠀⠀<span class="sgr34">⠣⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢠⠃</span>⠀⠀⠀⠀⡇<span class="sgr34">⡰⠁</span>⠀<span class="sgr32">⠈⡆</span>⠀⠀<span class="sgr34">⠈⠣⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢠⠇</span>⠀⠀⠀⠀⠀<span class="sgr34">⣇⠇</span>⠀⠀⠀<span class="sgr32">⠘⡄</span>⠀⠀⠀⠀<span class="sgr34">⠉⠒⠤⣄⣀⡀</span>⠀⠀⠀<span class="sgr90">│</span>        
+   w(z)       <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡠⠃</span>⠀⠀⠀⠀⠀⠀<span class="sgr34">⡟</span>⠀⠀⠀⠀⠀<span class="sgr32">⠈⢆⡀</span>⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⠉⠉⠉⠓</span><span class="sgr90">│</span>        
+              <span class="sgr90">│</span><span class="sgr32">⠤⠤⠤⠤⠤⠤⠤⠤⠤⠶⠶⠭</span>⠤⠤⠤⠤⠤⠤⠤<span class="sgr34">⢤⡧</span>⠤⠤⠤⠤⠤⠤⠤<span class="sgr32">⠭⠷⠶⠤⠤⠤⠤⠤⠤⠤⠤⠤</span><span class="sgr90">│</span>        
+              <span class="sgr90">│</span><span class="sgr34">⣀⣀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⡜</span>⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+              <span class="sgr90">│</span>⠀⠀<span class="sgr34">⠉⠉⠑⠒⠢⢄⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⢠⠃</span>⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⠈⠑⢆⡀</span>⠀⠀⠀⠀⠀⠀<span class="sgr34">⡎</span>⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⠑⢆⡀</span>⠀⠀⠀<span class="sgr34">⡸⠁</span>⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⠑⠦⣀⠔⠁</span>⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+        <span class="sgr90">-0.75</span> <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+              <span class="sgr90">└────────────────────────────────────────┘</span>        
+              ⠀<span class="sgr90">-4</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">4</span>⠀        
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀x⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀        </code></pre><article><details class="docstring" open="true"><summary id="LibCerf.im_w"><a class="docstring-binding" href="#LibCerf.im_w"><code>LibCerf.im_w</code></a> — <span class="docstring-category">Function</span></summary><section><div><pre><code class="language-julia hljs">im_w(x)
+im_w(re, im)</code></pre><p>Imaginary part of Faddeeva&#39;s scaled complex error function of real arguments.</p><ul><li><code>im_w(x) = imag( faddeeva_w(complex(x, 0.0)) )</code></li><li><code>im_w(re, im) = imag( faddeeva_w(complex(re, im)) )</code></li></ul><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; [ (x=x, w=Float32(im_w(x, 0.0))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, w::Float32}}:
+ (x = -2.0, w = -0.34002623)
+ (x = -1.5, w = -0.48322734)
+ (x = -1.0, w = -0.6071577)
+ (x = -0.5, w = -0.47892517)
+ (x = 0.0, w = 0.0)
+ (x = 0.5, w = 0.47892517)
+ (x = 1.0, w = 0.6071577)
+ (x = 1.5, w = 0.48322734)
+ (x = 2.0, w = 0.34002623)
+
+julia&gt; [ (x=x, w_im=im_w(x)) for x in (-Inf, -0.0, 0.0, Inf) ]
+4-element Vector{@NamedTuple{x::Float64, w_im::Float64}}:
+ (x = -Inf, w_im = -0.0)
+ (x = -0.0, w_im = -0.0)
+ (x = 0.0, w_im = 0.0)
+ (x = Inf, w_im = 0.0)
+
+julia&gt; faddeeva_w(3.14+0im) - complex(re_w(3.14,0.0), im_w(3.14))
+0.0 + 0.0im</code></pre><p>See also: <a href="#LibCerf.faddeeva_w"><code>faddeeva_w(z)</code></a>, <a href="#LibCerf.re_w"><code>re_w(re, im)</code></a></p></div><a class="docs-sourcelink" target="_blank" href="https://github.com/inkydragon/LibCerf.jl/blob/002a91101ad97f99b48cbec6fa8e52acfd998682/src/LibCerf.jl#L270-L306">source</a></section></details></article><pre><code class="language-julia hljs">using UnicodePlots
+lineplot(-5, 5, im_w; title=&quot;Im[w(z)]&quot;, ylabel=&quot;im_w(x)&quot;, ylim=(0.75, -0.75))</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">                 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr97"><span class="sgr1">Im[w(z)]</span></span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀        
+                 <span class="sgr90">┌────────────────────────────────────────┐</span>        
+            <span class="sgr90">0.75</span> <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr32">im_w(x)</span>
+                 <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀<span class="sgr32">⢠⠖⠦⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                 <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇<span class="sgr32">⢀⠇</span>⠀⠀<span class="sgr32">⠱⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                 <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇<span class="sgr32">⡸</span>⠀⠀⠀⠀<span class="sgr32">⠈⢆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                 <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⣇⡇</span>⠀⠀⠀⠀⠀⠀<span class="sgr32">⠓⢄⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                 <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⣿</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠉⠒⠦⢄⣀⡀</span>⠀⠀⠀⠀<span class="sgr90">│</span>        
+                 <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡏</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠈⠉⠉⠑⠒</span><span class="sgr90">│</span>        
+   im_w(x)       <span class="sgr90">│</span>⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤<span class="sgr32">⢤⡧</span>⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤<span class="sgr90">│</span>        
+                 <span class="sgr90">│</span><span class="sgr32">⠤⢄⣀⣀⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢸</span>⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                 <span class="sgr90">│</span>⠀⠀⠀⠀<span class="sgr32">⠈⠉⠑⠒⠤⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡇</span>⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                 <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠑⠦⡀</span>⠀⠀⠀⠀⠀<span class="sgr32">⢸⠁</span>⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                 <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠑⡄</span>⠀⠀⠀⠀<span class="sgr32">⡎</span>⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                 <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠘⢆</span>⠀⠀<span class="sgr32">⢠⠃</span>⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                 <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠓⠤⠃</span>⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+           <span class="sgr90">-0.75</span> <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                 <span class="sgr90">└────────────────────────────────────────┘</span>        
+                 ⠀<span class="sgr90">-5</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">5</span>⠀        
+                 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀x⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀        </code></pre><article><details class="docstring" open="true"><summary id="LibCerf.re_w"><a class="docstring-binding" href="#LibCerf.re_w"><code>LibCerf.re_w</code></a> — <span class="docstring-category">Function</span></summary><section><div><pre><code class="language-julia hljs">re_w(re, im)</code></pre><p>Real part of Faddeeva&#39;s scaled complex error function of real arguments.</p><ul><li><code>re_w(re, im) = real( faddeeva_w(complex(re, im)) )</code></li></ul><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; [ (x=x, re_w=Float32(re_w(x, 0.0))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, re_w::Float32}}:
+ (x = -2.0, re_w = 0.01831564)
+ (x = -1.5, re_w = 0.10539922)
+ (x = -1.0, re_w = 0.36787945)
+ (x = -0.5, re_w = 0.7788008)
+ (x = 0.0, re_w = 1.0)
+ (x = 0.5, re_w = 0.7788008)
+ (x = 1.0, re_w = 0.36787945)
+ (x = 1.5, re_w = 0.10539922)
+ (x = 2.0, re_w = 0.01831564)
+
+julia&gt; [ (x=x, re_w=re_w(x, 0.0)) for x in (-Inf, 0.0, Inf) ]
+3-element Vector{@NamedTuple{x::Float64, re_w::Float64}}:
+ (x = -Inf, re_w = 0.0)
+ (x = 0.0, re_w = 1.0)
+ (x = Inf, re_w = 0.0)
+
+julia&gt; faddeeva_w(1.0+2.0im) - complex(re_w(1.0,2.0), im_w(1.0,2.0))
+0.0 + 0.0im</code></pre><p>See also: <a href="#LibCerf.faddeeva_w"><code>faddeeva_w(z)</code></a>, <a href="#LibCerf.im_w"><code>im_w(re, im)</code></a></p></div><a class="docs-sourcelink" target="_blank" href="https://github.com/inkydragon/LibCerf.jl/blob/002a91101ad97f99b48cbec6fa8e52acfd998682/src/LibCerf.jl#L311-L344">source</a></section></details></article><pre><code class="language-julia hljs">using UnicodePlots
+re_w(x) = real(LibCerf.re_w(x, 0.0))
+lineplot(-2.5, 2.5, re_w; title=&quot;Re[w(z)]&quot;, ylabel=&quot;re_w(x, 0.0)&quot;)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">                  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr97"><span class="sgr1">Re[w(z)]</span></span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀        
+                  <span class="sgr90">┌────────────────────────────────────────┐</span>        
+                <span class="sgr90">1</span> <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡰⠉⡏⢆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr32">re_w(x)</span>
+                  <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢰⠁</span>⠀⡇<span class="sgr32">⠈⣆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                  <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀⠇</span>⠀⠀⡇⠀<span class="sgr32">⠸⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                  <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡸</span>⠀⠀⠀⡇⠀⠀<span class="sgr32">⢇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                  <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢠⠃</span>⠀⠀⠀⡇⠀⠀<span class="sgr32">⠘⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                  <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡜</span>⠀⠀⠀⠀⡇⠀⠀⠀<span class="sgr32">⢣</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                  <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢰⠃</span>⠀⠀⠀⠀⡇⠀⠀⠀<span class="sgr32">⠘⡆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+   re_w(x, 0.0)   <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡜</span>⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀<span class="sgr32">⢱</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                  <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢠⠃</span>⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀<span class="sgr32">⠘⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                  <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡏</span>⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀<span class="sgr32">⢱</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                  <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⣸</span>⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀<span class="sgr32">⢇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                  <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢠⠃</span>⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀<span class="sgr32">⠘⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                  <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢠⠃</span>⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠘⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                  <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡠⠃</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠈⢆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>        
+                <span class="sgr90">0</span> <span class="sgr90">│</span>⠀⠀⠀<span class="sgr32">⣀⣀⣀⡠⠴⠊</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠑⠢⢄⣀⣀⡀</span>⠀⠀⠀<span class="sgr90">│</span>        
+                  <span class="sgr90">└────────────────────────────────────────┘</span>        
+                  ⠀<span class="sgr90">-3</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">3</span>⠀        
+                  ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀x⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀        </code></pre><h2 id="Dawson’s-Integral"><a class="docs-heading-anchor" href="#Dawson’s-Integral">Dawson’s Integral</a><a id="Dawson’s-Integral-1"></a><a class="docs-heading-anchor-permalink" href="#Dawson’s-Integral" title="Permalink"></a></h2><article><details class="docstring" open="true"><summary id="LibCerf.dawson"><a class="docstring-binding" href="#LibCerf.dawson"><code>LibCerf.dawson</code></a> — <span class="docstring-category">Function</span></summary><section><div><pre><code class="language-julia hljs">dawson(x)
+dawson(z)</code></pre><p>Dawson integral of real or complex arguments.</p><p class="math-container">\[\text{Dawson}(z)
+= e^{-z^2} \int_0^z e^{t^2} dt
+= \frac{\sqrt{\pi}}{2} e^{-z^2} \text{erfi}(z)\]</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; [ (x=x, dawson=Float32(dawson(x))) for x in -2:0.5:2 ]
+9-element Vector{@NamedTuple{x::Float64, dawson::Float32}}:
+ (x = -2.0, dawson = -0.3013404)
+ (x = -1.5, dawson = -0.42824906)
+ (x = -1.0, dawson = -0.5380795)
+ (x = -0.5, dawson = -0.4244364)
+ (x = 0.0, dawson = 0.0)
+ (x = 0.5, dawson = 0.4244364)
+ (x = 1.0, dawson = 0.5380795)
+ (x = 1.5, dawson = 0.42824906)
+ (x = 2.0, dawson = 0.3013404)
+
+julia&gt; [ (x=x, dawson=dawson(x)) for x in (-Inf, -0.0, 0.0, Inf) ]
+4-element Vector{@NamedTuple{x::Float64, dawson::Float64}}:
+ (x = -Inf, dawson = -0.0)
+ (x = -0.0, dawson = -0.0)
+ (x = 0.0, dawson = 0.0)
+ (x = Inf, dawson = 0.0)
+
+julia&gt; abs( dawson(complex(pi)) - sqrt(pi)/2*exp(-pi^2)*erfi(complex(pi)) ) &lt; eps(Float64)
+true</code></pre><p>See also: <a href="#LibCerf.erfi"><code>erfi(z)</code></a></p><p><strong>References</strong></p><ul><li><a href="https://dlmf.nist.gov/7.2#E5">DLMF: §7.2.5</a></li><li><a href="https://mathworld.wolfram.com/DawsonsIntegral.html">Dawson&#39;s Integral – Wolfram MathWorld</a></li></ul></div><a class="docs-sourcelink" target="_blank" href="https://github.com/inkydragon/LibCerf.jl/blob/002a91101ad97f99b48cbec6fa8e52acfd998682/src/LibCerf.jl#L348-L390">source</a></section></details></article><p>Real part plot of <code>dawson(z)</code>:</p><pre><code class="language-julia hljs">using UnicodePlots
+re_dawson(x) = real(LibCerf.dawson(complex(x)))
+lineplot(-5, 5, re_dawson;
+    title=&quot;Re[Dawson(z)]&quot;, ylabel=&quot;dawson(x+0.0im)&quot;, ylim=(0.75, -0.75))</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">                         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr97"><span class="sgr1">Re[Dawson(z)]</span></span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀             
+                         <span class="sgr90">┌────────────────────────────────────────┐</span>             
+                    <span class="sgr90">0.75</span> <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr32">re_dawson(x)</span>
+                         <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>             
+                         <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀<span class="sgr32">⡰⠋⠑⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>             
+                         <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇<span class="sgr32">⢰⠃</span>⠀⠀⠀<span class="sgr32">⠣⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>             
+                         <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇<span class="sgr32">⡇</span>⠀⠀⠀⠀⠀<span class="sgr32">⠑⢆⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>             
+                         <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⣿⠁</span>⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠉⠒⠤⣄⣀</span>⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>             
+                         <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡏</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠉⠉⠑⠒⠒⠒</span><span class="sgr90">│</span>             
+   dawson(x+0.0im)       <span class="sgr90">│</span>⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤<span class="sgr32">⢤⡧</span>⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤<span class="sgr90">│</span>             
+                         <span class="sgr90">│</span><span class="sgr32">⠤⠤⠤⢄⣀⣀⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡸</span>⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>             
+                         <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀<span class="sgr32">⠉⠉⠒⠦⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡇</span>⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>             
+                         <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠑⢄</span>⠀⠀⠀⠀⠀<span class="sgr32">⡸</span>⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>             
+                         <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠣⡀</span>⠀⠀<span class="sgr32">⢀⠇</span>⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>             
+                         <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠉⢆⣀⠜</span>⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>             
+                         <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>             
+                   <span class="sgr90">-0.75</span> <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>             
+                         <span class="sgr90">└────────────────────────────────────────┘</span>             
+                         ⠀<span class="sgr90">-5</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">5</span>⠀             
+                         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀x⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀             </code></pre><h2 id="Voigt-Functions"><a class="docs-heading-anchor" href="#Voigt-Functions">Voigt Functions</a><a id="Voigt-Functions-1"></a><a class="docs-heading-anchor-permalink" href="#Voigt-Functions" title="Permalink"></a></h2><article><details class="docstring" open="true"><summary id="LibCerf.voigt"><a class="docstring-binding" href="#LibCerf.voigt"><code>LibCerf.voigt</code></a> — <span class="docstring-category">Function</span></summary><section><div><pre><code class="language-julia hljs">voigt(x, sigma, gamma)</code></pre><p>Convolution of a Gaussian and a Lorentzian of real arguments.</p><p class="math-container">\[\text{Voigt}(x; \sigma, \gamma)
+= \int_{-\infty}^{\infty} G(t; \sigma) L(x-t; \gamma) dt\]</p><p>where</p><p class="math-container">\[G(x; \sigma) = \frac{1}{\sigma\sqrt{2\pi}} \exp(-\frac{x^2}{2\sigma^2})\]</p><p class="math-container">\[L(x; \gamma) = \frac{ \gamma }{ \pi(x^2+\gamma^2) }\]</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; [ (x=x, voigt=Float32(voigt(x, 1.0, 0.0))) for x in -10:2.0:10 ]
+11-element Vector{@NamedTuple{x::Float64, voigt::Float32}}:
+ (x = -10.0, voigt = 7.6945985f-23)
+ (x = -8.0, voigt = 5.052271f-15)
+ (x = -6.0, voigt = 6.075883f-9)
+ (x = -4.0, voigt = 0.00013383022)
+ (x = -2.0, voigt = 0.053990968)
+ (x = 0.0, voigt = 0.3989423)
+ (x = 2.0, voigt = 0.053990968)
+ (x = 4.0, voigt = 0.00013383022)
+ (x = 6.0, voigt = 6.075883f-9)
+ (x = 8.0, voigt = 5.052271f-15)
+ (x = 10.0, voigt = 7.6945985f-23)
+
+julia&gt; [ (x=x, voigt=Float32(voigt(x, 0.0, 3.0))) for x in -10:2.0:10 ]
+11-element Vector{@NamedTuple{x::Float64, voigt::Float32}}:
+ (x = -10.0, voigt = 0.008760823)
+ (x = -8.0, voigt = 0.013081228)
+ (x = -6.0, voigt = 0.02122066)
+ (x = -4.0, voigt = 0.038197186)
+ (x = -2.0, voigt = 0.07345613)
+ (x = 0.0, voigt = 0.10610329)
+ (x = 2.0, voigt = 0.07345613)
+ (x = 4.0, voigt = 0.038197186)
+ (x = 6.0, voigt = 0.02122066)
+ (x = 8.0, voigt = 0.013081228)
+ (x = 10.0, voigt = 0.008760823)
+
+julia&gt; [ (x=x, voigt=Float32(voigt(x, 1.0, 0.5))) for x in (-Inf, 0.0, Inf) ]
+3-element Vector{@NamedTuple{x::Float64, voigt::Float32}}:
+ (x = -Inf, voigt = 0.0)
+ (x = 0.0, voigt = 0.27895546)
+ (x = Inf, voigt = 0.0)</code></pre><p>See also: <a href="#LibCerf.faddeeva_w"><code>faddeeva_w(z)</code></a>, <a href="#LibCerf.voigt_hwhm"><code>voigt_hwhm(sigma, gamma)</code></a></p><p><strong>References</strong></p><ul><li><a href="https://en.wikipedia.org/wiki/Voigt_profile">Voigt profile - Wikipedia</a></li></ul></div><a class="docs-sourcelink" target="_blank" href="https://github.com/inkydragon/LibCerf.jl/blob/002a91101ad97f99b48cbec6fa8e52acfd998682/src/LibCerf.jl#L396-L454">source</a></section></details></article><pre><code class="language-julia hljs">using UnicodePlots
+# Plot Voigt function
+σ, γ = 2.0, 1.0;
+gauss(x) = LibCerf.voigt(x, σ, 0.0)     # Gauss (Normal) distribution
+lorentz(x) = LibCerf.voigt(x, 0.0, γ)   # Cauchy–Lorentz distribution
+voigt_σγ(x) = LibCerf.voigt(x, σ, γ)
+plt = lineplot(-5, 5, [gauss, lorentz, voigt_σγ]
+    ; title=&quot;Voigt(z; σ, γ), G(x; σ), L(x; γ)&quot;
+    , height=20, width=60)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr97"><span class="sgr1">Voigt(z; σ, γ), G(x; σ), L(x; γ)</span></span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀            
+            <span class="sgr90">┌────────────────────────────────────────────────────────────┐</span>            
+        <span class="sgr90">0.2</span> <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⡇</span><span class="sgr32">⣀⠔⠋⠉⡏⠉⠢⣄</span><span class="sgr34">⢸</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr32">gauss(x)</span>   
+            <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr36">⢸⠝</span>⠀⠀⠀⠀⡇⠀⠀⠀<span class="sgr36">⠫⡆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr34">lorentz(x)</span> 
+            <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡠</span><span class="sgr36">⡻</span>⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀<span class="sgr36">⢫</span><span class="sgr32">⢆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr31">voigt_σγ(x)</span>
+            <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡜⠁</span><span class="sgr34">⡇</span>⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀<span class="sgr34">⢸</span><span class="sgr32">⠈⢣</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+            <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡜⠁</span><span class="sgr34">⢸⠁</span>⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀<span class="sgr34">⡇</span>⠀<span class="sgr32">⢣⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+            <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀⡜</span>⠀⠀<span class="sgr34">⡜</span>⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀<span class="sgr34">⢱</span>⠀⠀<span class="sgr32">⢣⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+            <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀⡜</span>⠀⠀<span class="sgr34">⢠⠇</span><span class="sgr31">⢀⡤⠒⠊⠉⠉⡏⠉⠑⠒⢤⡀</span><span class="sgr34">⠸⡄</span>⠀⠀<span class="sgr32">⢱⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+            <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀⡜</span>⠀⠀⠀<span class="sgr35">⡼</span><span class="sgr31">⠖⠁</span>⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀<span class="sgr31">⠈⠓</span><span class="sgr35">⢧</span><span class="sgr31">⡀</span>⠀⠀<span class="sgr32">⢱⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+            <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀⡜</span>⠀⠀<span class="sgr31">⡠</span><span class="sgr35">⢪</span><span class="sgr34">⠇</span>⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀<span class="sgr34">⠘</span><span class="sgr35">⡕</span><span class="sgr31">⢆⡀</span>⠀<span class="sgr32">⢱</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+   f(x)     <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀⡜</span>⠀<span class="sgr31">⡠⠊</span>⠀<span class="sgr34">⡎</span>⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⢣</span>⠀<span class="sgr31">⠑⢆⡀</span><span class="sgr32">⢱⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+            <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀⡜</span><span class="sgr31">⡠⠎</span>⠀⠀<span class="sgr34">⢰⠁</span>⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⠈⢇</span>⠀⠀<span class="sgr31">⠱⢄</span><span class="sgr32">⢱⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+            <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀</span><span class="sgr33">⣎</span><span class="sgr31">⠖⠁</span>⠀⠀<span class="sgr34">⢠⠇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⠘⡄</span>⠀⠀⠀<span class="sgr31">⠓</span><span class="sgr33">⣵</span><span class="sgr32">⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+            <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr33">⢠⠞</span><span class="sgr31">⠁</span>⠀⠀⠀<span class="sgr34">⢀⠎</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⠸⡄</span>⠀⠀⠀⠀<span class="sgr33">⠳⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+            <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr31">⢀</span><span class="sgr33">⢴⠏</span>⠀⠀⠀⠀<span class="sgr34">⢠⠎</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⠱⡄</span>⠀⠀⠀⠀<span class="sgr33">⠸⡧</span><span class="sgr31">⡄</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+            <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr31">⣀⠔</span><span class="sgr33">⡡</span><span class="sgr32">⠃</span>⠀⠀⠀⠀<span class="sgr34">⡠⠃</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⠘⢄</span>⠀⠀⠀⠀<span class="sgr32">⠘</span><span class="sgr33">⢎</span><span class="sgr31">⠣⣄</span>⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+            <span class="sgr90">│</span>⠀⠀⠀⠀⠀<span class="sgr31">⢀⡠⠊</span><span class="sgr33">⢁</span><span class="sgr32">⠖⠁</span>⠀⠀⠀<span class="sgr34">⣀⠖⠁</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⠓⣄</span>⠀⠀⠀⠀<span class="sgr32">⠓</span><span class="sgr33">⡌</span><span class="sgr31">⠑⢄⡀</span>⠀⠀⠀⠀⠀<span class="sgr90">│</span>            
+            <span class="sgr90">│</span>⠀⠀<span class="sgr31">⢀⡠⠞⠁</span><span class="sgr32">⢀⠔⠃</span>⠀⠀<span class="sgr34">⢀⡴⠊⠁</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⠑⠦⡀</span>⠀⠀<span class="sgr32">⠘⠢⡀</span><span class="sgr31">⠈⠳⢄⡀</span>⠀⠀<span class="sgr90">│</span>            
+            <span class="sgr90">│</span><span class="sgr31">⠔⠊⠁</span>⠀<span class="sgr32">⣠⠔</span><span class="sgr36">⢃</span><span class="sgr34">⣀⡤⠔⠊⠁</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⠈⠑⠢⢤⣀</span><span class="sgr36">⡈</span><span class="sgr32">⠢⣄</span>⠀<span class="sgr31">⠈⠑⠢</span><span class="sgr90">│</span>            
+            <span class="sgr90">│</span><span class="sgr36">⣤⣤⠤⠞⠓</span><span class="sgr34">⠉⠉</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr34">⠉⠉</span><span class="sgr36">⠚⠓⠦⣤⡤</span><span class="sgr90">│</span>            
+          <span class="sgr90">0</span> <span class="sgr90">│</span><span class="sgr32">⠁</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⠈</span><span class="sgr90">│</span>            
+            <span class="sgr90">└────────────────────────────────────────────────────────────┘</span>            
+            ⠀<span class="sgr90">-5</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">5</span>⠀            
+            ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀x⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀            </code></pre><article><details class="docstring" open="true"><summary id="LibCerf.voigt_hwhm"><a class="docstring-binding" href="#LibCerf.voigt_hwhm"><code>LibCerf.voigt_hwhm</code></a> — <span class="docstring-category">Function</span></summary><section><div><pre><code class="language-julia hljs">voigt_hwhm(sigma, gamma)</code></pre><p>Half width at half maximum of the Voigt function of real arguments.</p><p>It is implicitly defined by:</p><p class="math-container">\[\text{Voigt}( \text{VoigtHWHM}( \sigma, \gamma); \sigma, \gamma)
+= \frac{1}{2} \text{Voigt}(0; \sigma, \gamma)\]</p><p><strong>Examples</strong></p><pre><code class="language-julia-repl hljs">julia&gt; σ, γ = 1.3, 0.5;
+
+julia&gt; [ (x=x, voigt=Float32(voigt(x, σ, γ))) for x in -12:4.0:12 ]
+7-element Vector{@NamedTuple{x::Float64, voigt::Float32}}:
+ (x = -12.0, voigt = 0.0011444782)
+ (x = -8.0, voigt = 0.0027030057)
+ (x = -4.0, voigt = 0.016749112)
+ (x = 0.0, voigt = 0.23147874)
+ (x = 4.0, voigt = 0.016749112)
+ (x = 8.0, voigt = 0.0027030057)
+ (x = 12.0, voigt = 0.0011444782)
+
+julia&gt; Float32(voigt(0.0, σ, γ))    # peak
+0.23147874f0
+
+julia&gt; Float32(voigt(0.0, σ, γ)) / 2  # half peak
+0.11573937f0
+
+julia&gt; hwhm_x = voigt_hwhm(σ, γ);   # here voigt takes exactly half the peak value
+
+julia&gt; voigt(hwhm_x, σ, γ) ≈ voigt(0.0, σ, γ)/2
+true</code></pre><p>See also: <a href="#LibCerf.voigt"><code>voigt(x, sigma, gamma)</code></a></p><p><strong>References</strong></p><ul><li>Wuttke, J. (2025). Power series for the half width of the Voigt function, rederived.   Journal of Numerical Analysis and Approximation Theory, 54(2), 345-356.   https://doi.org/10.33993/jnaat542-1640</li></ul></div><a class="docs-sourcelink" target="_blank" href="https://github.com/inkydragon/LibCerf.jl/blob/002a91101ad97f99b48cbec6fa8e52acfd998682/src/LibCerf.jl#L460-L504">source</a></section></details></article><pre><code class="language-julia hljs">using UnicodePlots
+# Plot Voigt function
+σ, γ = 1.3, 0.5;
+voigt_σγ(x) = LibCerf.voigt(x, σ, γ)
+plt = lineplot(-5, 5, voigt_σγ; title=&quot;Voigt(z; σ=$σ, γ=$γ)&quot;, ylim=(0.25, -0.05))
+# Plot y_half and x_hwhm
+y_peak = LibCerf.voigt(0.0, σ, γ)
+y_half = Float32(y_peak / 2)        # Half peak
+x_hwhm = Float32(LibCerf.voigt_hwhm(σ, γ))  # Get x where y = y_half
+hline!(plt, y_half; name=&quot;y_half = $y_half&quot;)
+vline!(plt, x_hwhm; name=&quot;x_hwhm = $x_hwhm&quot;)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr97"><span class="sgr1">Voigt(z; σ=1.3, γ=0.5)</span></span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀                    
+              <span class="sgr90">┌────────────────────────────────────────┐</span>                    
+         <span class="sgr90">0.25</span> <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⣀⣇</span>⠀⠀⠀⠀⠀⠀<span class="sgr31">⡇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr32">voigt_σγ(x)</span>        
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⣀⠎⠁</span>⡇<span class="sgr32">⠑⣄</span>⠀⠀⠀⠀<span class="sgr31">⡇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr34">y_half = 0.11573937</span>
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡰⠃</span>⠀⠀⡇⠀<span class="sgr32">⠈⢆</span>⠀⠀⠀<span class="sgr31">⡇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span> <span class="sgr31">x_hwhm = 1.815095</span>  
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡰⠁</span>⠀⠀⠀⡇⠀⠀<span class="sgr32">⠈⢇</span>⠀⠀<span class="sgr31">⡇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>                    
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡰⠁</span>⠀⠀⠀⠀⡇⠀⠀⠀<span class="sgr32">⠈⢇</span>⠀<span class="sgr31">⡇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>                    
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢰⠃</span>⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀<span class="sgr32">⠈⢆</span><span class="sgr31">⡇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>                    
+              <span class="sgr90">│</span><span class="sgr34">⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤</span><span class="sgr36">⢤⠧</span><span class="sgr34">⠤⠤⠤⠤⠤⠤⡧⠤⠤⠤⠤⠤</span><span class="sgr36">⠼</span><span class="sgr37">⡧</span><span class="sgr34">⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤⠤</span><span class="sgr90">│</span>                    
+   f(x)       <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⢠⠃</span>⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀<span class="sgr33">⡟</span><span class="sgr32">⡆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>                    
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡰⠃</span>⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀<span class="sgr31">⡇</span><span class="sgr32">⠘⢆</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>                    
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr32">⡔⠁</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀<span class="sgr31">⡇</span>⠀<span class="sgr32">⠈⠣⡀</span>⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>                    
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀<span class="sgr32">⢀⡤⠊</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀<span class="sgr31">⡇</span>⠀⠀⠀<span class="sgr32">⠑⠦⡀</span>⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>                    
+              <span class="sgr90">│</span>⠀<span class="sgr32">⣀⣀⡠⠤⠒⠁</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀<span class="sgr31">⡇</span>⠀⠀⠀⠀⠀<span class="sgr32">⠈⠓⠦⢄⣀⣀</span>⠀<span class="sgr90">│</span>                    
+              <span class="sgr90">│</span><span class="sgr32">⠛⠓</span>⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⡗⠒⠒⠒⠒⠒⠒<span class="sgr31">⡗</span>⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒⠒<span class="sgr32">⠛</span><span class="sgr90">│</span>                    
+              <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀<span class="sgr31">⡇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>                    
+        <span class="sgr90">-0.05</span> <span class="sgr90">│</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀<span class="sgr31">⡇</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">│</span>                    
+              <span class="sgr90">└────────────────────────────────────────┘</span>                    
+              ⠀<span class="sgr90">-5</span>⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀<span class="sgr90">5</span>⠀                    
+              ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀x⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀                    </code></pre></article><nav class="docs-footer"><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.16.1 on <span class="colophon-date" title="Friday 2 January 2026 15:19">Friday 2 January 2026</span>. Using Julia version 1.12.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
