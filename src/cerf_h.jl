@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-using Libcerf_jll: Libcerf_jll
+import Libcerf_jll
 const libcerf = Libcerf_jll.libcerf
 
 # compute w(z) = exp(-z^2) erfc(-iz), Faddeeva's scaled complex error function
