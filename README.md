@@ -53,6 +53,22 @@ NOTE: `erf`, `erfc`, and `faddeeva_w` only support complex arguments.
 - `voigt(x, sigma, gamma)`: Voigt's convolution of a Gaussian and a Lorentzian
 - `voigt_hwhm(sigma, gamma)`: Half width at half maximum of the Voigt profile
 
+## Similar Packages
+
+- (MIT) [JuliaMath/SpecialFunctions.jl](https://specialfunctions.juliamath.org/stable/functions_overview/#Error-Functions,-Dawson%E2%80%99s-and-Fresnel-Integrals):
+    provides a comprehensive collection of special functions based on
+    the OpenSpecFun and OpenLibm libraries.  
+    For real and complex arguments:
+    `erf(z)`, `erfc(z)`, `erfcx(z)`, `erfi(z)`; `faddeeva(z)`; `dawson(z)`;  
+    Also note that it also uses the Faddeeva C library.
+- (GPL-3.0) [JuliaMath/GSL.jl](https://github.com/JuliaMath/GSL.jl):
+    Julia interface to the GNU Scientific Library (GSL).  
+    For real arguments ONLY: `sf_erf(x)`, `sf_erfc(x)`; `sf_dawson(x)`
+- (GPL-3.0) [markmbaum/Faddeyeva985.jl](https://github.com/markmbaum/Faddeyeva985.jl):
+    Julia implementation of Algorithm 985, a fast, moderate-accuracy approximation
+    of the Faddeyeva (Faddeeva) function.  
+    `faddeyeva(z)`
+
 
 ## License
 
