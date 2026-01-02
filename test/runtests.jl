@@ -112,5 +112,4 @@ for T in (Float64, Float32, Float16)
             @test iszero(dawson(CT(-Inf)))
         end
     end # TT
-
 end # T
