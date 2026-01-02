@@ -8,4 +8,4 @@ Libcerf_jll = "af83a40a-c4c4-57a0-81df-2309fbd279e3"
 
 [compat]
 Libcerf_jll = "1.17.0"
-julia = "1.10"
+julia = "1.6"
