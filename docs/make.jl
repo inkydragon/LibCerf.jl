@@ -24,4 +24,5 @@ makedocs(;
 deploydocs(;
     repo="github.com/inkydragon/LibCerf.jl",
     devbranch="main",
+    push_preview=true,
 )
