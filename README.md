@@ -18,7 +18,7 @@ Julia wrapper for [libcerf](https://jugit.fz-juelich.de/mlz/libcerf).
 using Pkg;  Pkg.add("LibCerf")
 ```
 
-Or Using [Pkg REPL mode](https://docs.julialang.org/en/v1/stdlib/Pkg/):
+Or using [Pkg REPL mode](https://docs.julialang.org/en/v1/stdlib/Pkg/):
 
 ```julia
 ]add LibCerf
@@ -37,14 +37,14 @@ NOTE: `erf`, `erfc`, and `faddeeva_w` only support complex arguments.
 - `erfcx(z)`, `erfcx(x)`: Underflow-compensated complementary error function
 - `erfi(z)`, `erfi(x)`: Imaginary error function
 
-### Faddeeva functions
+### Faddeeva Functions
 
 - `faddeeva_w(z)`: Faddeeva's scaled complex error function
-- `im_w(x)`: imaginary part of `faddeeva_w(complex(x, 0.0))`
-- `im_w(re, im)`: imaginary part of `faddeeva_w(complex(re, im))`
-- `re_w(re, im)`: real part of `faddeeva_w(complex(re, im))`
+- `im_w(x)`: Imaginary part of `faddeeva_w(complex(x, 0.0))`
+- `im_w(re, im)`: Imaginary part of `faddeeva_w(complex(re, im))`
+- `re_w(re, im)`: Real part of `faddeeva_w(complex(re, im))`
 
-### Dawson’s Integral
+### Dawson's Integral
 
 - `dawson(z)`, `dawson(x)`: Dawson's integral
 
