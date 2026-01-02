@@ -58,8 +58,7 @@ for T in (Float64, Float32, Float16)
     @testset "re_w($T)" begin
         @test isnan(@inferred(re_w(T(NaN), T(NaN))))
         @test isnan(re_w(T(0.0), T(NaN)))
-        # @test isnan(re_w(T(NaN), T(0.0)))
-        @test_broken re_w(T(NaN), T(0.0)) === T(NaN)
+        @test isnan(re_w(T(NaN), T(0.0))) broken=!Sys.isapple()
 
         @test re_w(T(100), T(0)) == T(0)
         @test re_w(T(0), T(0)) == T(1)
