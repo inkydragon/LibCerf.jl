@@ -42,7 +42,7 @@ lineplot!(plt, 1, 0; name="y = 1")
 ```
 `erf(x)` and `erfc(x)` relations:
 ```@example plot
-lineplot(-4, 4, [re_erf, re_erfc]; title="Erf(x) + Erfc(z) = 1", ylim=(2, -1))
+lineplot(-4, 4, [re_erf, re_erfc]; title="Erf(z) + Erfc(z) = 1", ylim=(2, -1))
 ```
 
 ```@docs
@@ -66,7 +66,7 @@ lineplot(-2, 2, re_erfi; title="Re[Erfi(z)]", ylabel="erfi(x)")
 ```
 
 
-## Faddeeva function
+## Faddeeva Functions
 ```@docs
 LibCerf.faddeeva_w
 ```
@@ -118,7 +118,7 @@ gauss(x) = LibCerf.voigt(x, σ, 0.0)     # Gauss (Normal) distribution
 lorentz(x) = LibCerf.voigt(x, 0.0, γ)   # Cauchy–Lorentz distribution
 voigt_σγ(x) = LibCerf.voigt(x, σ, γ)
 plt = lineplot(-5, 5, [gauss, lorentz, voigt_σγ]
-    ; title="Voigt(z; σ, γ), G(x; σ), L(x; γ)"
+    ; title="Voigt(x; σ, γ), G(x; σ), L(x; γ)"
     , height=20, width=60)
 ```
 
@@ -130,7 +130,7 @@ using UnicodePlots
 # Plot Voigt function
 σ, γ = 1.3, 0.5;
 voigt_σγ(x) = LibCerf.voigt(x, σ, γ)
-plt = lineplot(-5, 5, voigt_σγ; title="Voigt(z; σ=$σ, γ=$γ)", ylim=(0.25, -0.05))
+plt = lineplot(-5, 5, voigt_σγ; title="Voigt(x; σ=$σ, γ=$γ)", ylim=(0.25, -0.05))
 # Plot y_half and x_hwhm
 y_peak = LibCerf.voigt(0.0, σ, γ)
 y_half = Float32(y_peak / 2)        # Half peak
